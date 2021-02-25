@@ -15,21 +15,28 @@ Répartition du travail :
 Recherche sur les méthodes de conception : UML/Merise
 Recherche sur les outils de conception
 Tenir en compte la modélisation fournit du cas présenté (Cas d'utilisations, Classes, Séquences, Activités)
+<br/>
 3 Jours:
 
 Faire le wireframing des interfaces
 Réaliser le UI/UX Maquette/Prototype avec Adobe XD ou Figma (N.B:Intégrer les interfaces de validation et d'interaction(ex: pour suppression ou modification)
+<br/>
+
 5 Jours
 
 Recherche sur la technologie SASS.
 Réaliser la structure de l'application avec HTML/CSS et SASS
 Implémenter les interfaces de l'application
 Implémenter la validation des champs des formulaires avec du Javascript(Regex)
+<br/>
+
 4 Jours
 
 Recherche sur SQL
 Manipuler et tester des requêtes SQL sur PHPMyAdmin
 Créer la base de donnée à partir de la conception fournit pour le SGBD MySQL.
+<br/>
+
 4 Jours
 
 Recherche sur PHP
