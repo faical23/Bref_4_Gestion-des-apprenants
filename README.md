@@ -2,8 +2,8 @@
 
 #Team
 
--Faical bahsis
--Chaimae nmiyesse
+-Faical Bahsis <br/>
+-Chaimae Nmiyesse
 
 Contexte du projet
 Vous êtes amenés à créer une maquette/prototype pour les versions desktop et mobile et réaliser le front-end et le back-end de l'application.
