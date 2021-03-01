@@ -1,0 +1,318 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  border: 0;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+  font-weight: 700;
+}
+
+input,
+textarea:focus {
+  outline: 0;
+}
+
+button:focus {
+  cursor: pointer;
+  outline: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  border: 0;
+}
+
+.container {
+  padding: 0 5%;
+}
+
+@font-face {
+  font-family: 'poping-Regular';
+  src: url(../font/poping/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'poping-Semibold';
+  src: url(../font/poping/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'poping-Medium';
+  src: url(../font/poping/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'poping-Bold';
+  src: url(../font/poping/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'poping-Light';
+  src: url(../font/poping/Poppins-Light.ttf);
+}
+
+* {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'poping-Semibold';
+  font-size: 16px;
+  color: #002347;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #FDC632;
+}
+
+h1 {
+  font-size: 70px;
+  color: black;
+  font-family: 'poping-Bold';
+  text-align: center;
+}
+
+.logo {
+  font-family: 'poping-Semibold';
+  font-size: 40px;
+  color: black;
+  cursor: pointer;
+}
+
+span {
+  color: #002347;
+}
+
+.active {
+  color: #FDC632;
+}
+
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .menu {
+  align-self: center;
+}
+
+header .menu ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+
+header .menu ul li {
+  padding-left: 50px;
+}
+
+header .menu #burgger_menu_of {
+  display: none;
+  padding-top: 8px;
+}
+
+header .menu #burgger_menu_of #lin_1_burger, header .menu #burgger_menu_of #lin_2_burger, header .menu #burgger_menu_of #lin_3_burger, header .menu #burgger_menu_of #lin_1_burger_of, header .menu #burgger_menu_of #lin_3_burger_of {
+  width: 36px;
+  height: 4px;
+  background-color: #FDC632;
+  margin-bottom: 4px;
+}
+
+header .menu #burgger_menu_of #lin_1_burger_of, header .menu #burgger_menu_of #lin_3_burger_of {
+  height: 6px;
+}
+
+header .menu #burgger_menu_of #lin_2_burger_of {
+  display: none;
+}
+
+header .menu #burgger_menu_of #lin_1_burger_of {
+  transform: rotate(50deg);
+  transition: 0.4s 0.4s;
+}
+
+header .menu #burgger_menu_of #lin_3_burger_of {
+  transform: rotate(-410deg);
+  transition: 0.4s 0.4s;
+  margin-top: -10px;
+}
+
+@media screen and (max-width: 560px) {
+  header .menu ul {
+    display: none !important;
+  }
+  header #burgger_menu_of {
+    display: block !important;
+  }
+}
+
+#navbar_mobile, #navbar_mobile_on {
+  background-color: #FDC632;
+  position: fixed;
+  width: 100%;
+  padding: 30px;
+  display: block;
+}
+
+#navbar_mobile a, #navbar_mobile_on a {
+  display: block;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+#navbar_mobile a:hover, #navbar_mobile_on a:hover {
+  color: white;
+}
+
+#navbar_zone {
+  position: relative;
+  z-index: 100;
+  transition: 0.4s 0.4s;
+  bottom: 1000px;
+}
+
+#navbar_mobile_on {
+  transition: 0.4s 0.4s;
+  position: relative;
+  z-index: 100;
+  bottom: 0px;
+}
+
+@media screen and (max-width: 560px) {
+  #navbar_mobile, #navbar_mobile_on {
+    display: block;
+  }
+}
+
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .menu {
+  align-self: center;
+}
+
+header .menu ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+
+header .menu ul li {
+  padding-left: 50px;
+}
+
+header .menu #burgger_menu_of {
+  display: none;
+  padding-top: 8px;
+}
+
+header .menu #burgger_menu_of #lin_1_burger, header .menu #burgger_menu_of #lin_2_burger, header .menu #burgger_menu_of #lin_3_burger, header .menu #burgger_menu_of #lin_1_burger_of, header .menu #burgger_menu_of #lin_3_burger_of {
+  width: 36px;
+  height: 4px;
+  background-color: #FDC632;
+  margin-bottom: 4px;
+}
+
+header .menu #burgger_menu_of #lin_1_burger_of, header .menu #burgger_menu_of #lin_3_burger_of {
+  height: 6px;
+}
+
+header .menu #burgger_menu_of #lin_2_burger_of {
+  display: none;
+}
+
+header .menu #burgger_menu_of #lin_1_burger_of {
+  transform: rotate(50deg);
+  transition: 0.4s 0.4s;
+}
+
+header .menu #burgger_menu_of #lin_3_burger_of {
+  transform: rotate(-410deg);
+  transition: 0.4s 0.4s;
+  margin-top: -10px;
+}
+
+@media screen and (max-width: 560px) {
+  header .menu ul {
+    display: none !important;
+  }
+  header #burgger_menu_of {
+    display: block !important;
+  }
+}
+
+#navbar_mobile, #navbar_mobile_on {
+  background-color: #FDC632;
+  position: fixed;
+  width: 100%;
+  padding: 30px;
+  display: block;
+}
+
+#navbar_mobile a, #navbar_mobile_on a {
+  display: block;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+#navbar_mobile a:hover, #navbar_mobile_on a:hover {
+  color: white;
+}
+
+#navbar_zone {
+  position: relative;
+  z-index: 100;
+  transition: 0.4s 0.4s;
+  bottom: 1000px;
+}
+
+#navbar_mobile_on {
+  transition: 0.4s 0.4s;
+  position: relative;
+  z-index: 100;
+  bottom: 0px;
+}
+
+@media screen and (max-width: 560px) {
+  #navbar_mobile, #navbar_mobile_on {
+    display: block;
+  }
+}

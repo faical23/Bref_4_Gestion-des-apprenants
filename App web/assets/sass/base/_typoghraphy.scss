@@ -1,0 +1,58 @@
+@font-face{
+    font-family: 'poping-Regular';
+    src:url(../font/poping/Poppins-Regular.ttf);
+}
+@font-face{
+    font-family: 'poping-Semibold';
+    src:url(../font/poping/Poppins-SemiBold.ttf);
+}
+@font-face{
+    font-family: 'poping-Medium';
+    src:url(../font/poping/Poppins-Medium.ttf);
+}
+@font-face{
+    font-family: 'poping-Bold';
+    src:url(../font/poping/Poppins-Bold.ttf);
+}
+@font-face{
+    font-family: 'poping-Light';
+    src:url(../font/poping/Poppins-Light.ttf);
+}
+
+*{
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+
+    font-family: 'poping-Semibold';
+    font-size: 16px;
+    color: $primary_color_2;
+    font-weight: 300;
+    cursor: pointer;
+    &:hover{
+        text-decoration: none;
+        color: $primary_color_1;
+    }
+}
+
+h1{
+    font-size: 70px;
+    color: black;
+    font-family: 'poping-Bold';
+    text-align: center;
+}
+
+.logo{
+    font-family: 'poping-Semibold';
+    font-size: 40px;
+    color: black;
+    cursor: pointer;
+}
+span{
+    color: $primary_color_2;
+}
+.active{
+    color: $primary_color_1;
+
+}
