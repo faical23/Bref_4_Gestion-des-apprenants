@@ -63,11 +63,10 @@ header{
 
 #navbar_mobile,#navbar_mobile_on{
     background-color: $primary_color_1;
-    position: fixed;
+    position: relative;
     width: 100%;
     padding:30px;
     display: block;
-
     a{
         display: block;
         text-align: center;
@@ -78,15 +77,17 @@ header{
     }
 }
 #navbar_zone{
-    position: relative;
+    position: fixed;
     z-index: 100;
     transition: 0.4s 0.4s;
     bottom: 1000px;
+    width: 100%;
 
 }
 #navbar_mobile_on{
+    position: fixed;
+    width: 100%;
     transition: 0.4s 0.4s;
-    position: relative;
     z-index: 100;
     bottom: 0px;
 }
