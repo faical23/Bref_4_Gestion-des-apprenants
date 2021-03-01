@@ -1,15 +1,20 @@
 header{
+    padding-top: 20px;
     .navbar{
-        display: flex;
-        justify-content: space-between;
+        @include flex();
+
+    }
+    .logo{
+        font-family: 'poping-Semibold';
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
     }
     .menu{
         align-self: center;
 
         ul{
-            display: flex;
-            justify-content: space-evenly;
-            padding-top: 20px;
+            @include flex();
             li{
                 padding-left: 50px;
             }
@@ -17,6 +22,7 @@ header{
         #burgger_menu_of{
             display: none;
             padding-top: 8px;
+            cursor: pointer;
             #lin_1_burger,#lin_2_burger,#lin_3_burger, #lin_1_burger_of,#lin_3_burger_of{
                 width: 36px;
                 height: 4px;

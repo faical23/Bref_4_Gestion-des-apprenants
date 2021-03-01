@@ -32,6 +32,8 @@ h6 {
 input,
 textarea:focus {
 	outline: 0;
+	display: block;
+	background-color: white;
 }
 
 button:focus {
@@ -52,4 +54,13 @@ img {
 }
 .container{
     padding: 0 5%;
+}
+
+.body_login{
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/background/home-banner.jpg);
+	@include background() ;
+	height: 100vh;
+	@media screen and (max-width: 360px){
+		height: 130vh;
+	}
 }

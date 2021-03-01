@@ -46,7 +46,7 @@ h1{
 .logo{
     font-family: 'poping-Semibold';
     font-size: 40px;
-    color: black;
+    color: white;
     cursor: pointer;
 }
 span{
@@ -55,4 +55,9 @@ span{
 .active{
     color: $primary_color_1;
 
+}
+
+p{
+    font-family: 'poping-Regular';
+    font-size: 17px;
 }
