@@ -1,0 +1,21 @@
+footer{
+    background: $primary_color_2;
+	width: 100%;
+	margin-top: 10px;
+    @include flex();
+    padding:1% 2% 0% 2%;
+    p{
+        color: $primary_color_3;
+        align-self: center;
+        font-family: 'poping-Regular';
+        font-size: 15px;
+    }
+    @media screen and (max-width: 560px) {
+        display: block;
+        padding: 5% 0%;
+        text-align: center;
+        p{
+            padding-bottom: 20px;
+        }
+    }
+}

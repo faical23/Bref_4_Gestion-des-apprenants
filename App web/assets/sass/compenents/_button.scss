@@ -1,14 +1,16 @@
 button{
     background-color: $primary_color_1;
-    padding: 5px 50px;
+    padding: 18px 50px;
     color:  $primary_color_2;
     font-family: 'poping-Light';
     cursor: pointer;
-    border-radius: 50px;
     font-size: 17px;
     margin-bottom: 20px;
+    transition: all 0.5s ease-in-out;
+
+
     &:hover{
-        background-color: $primary_color_2;
-        color: $primary_color_1;
+        box-shadow: -5px -5px 0px 1px white;
+
     }
 }

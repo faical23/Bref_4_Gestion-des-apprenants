@@ -52,20 +52,28 @@ img {
 	max-width: 100%;
 	border: 0;
 }
-.container{
-    padding: 0 5%;
+
+
+
+
+body{
+    padding: 3% 5%;
+	background-color: black;
+}
+.haeder_main{
+	display: flex;
+	justify-content: space-between;
+	@media screen and (max-width: 560px) 
+    {
+		display: block;
+    }
+}
+main{
+    background: $primary_color_2;
+	width: 80%;
 }
 
-.body_login{
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/background/home-banner.jpg);
-	@include background() ;
-	height: 100vh;
-	@media screen and (max-width: 360px){
-		height: 130vh;
-	}
-}
-.hero_profil{
-	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/background/home-banner.jpg);
-	@include background() ;
 
+main , footer{
+	border-radius: 9px;
 }

@@ -1,99 +1,98 @@
 header{
-    padding-top: 20px;
+    border: 1px solid black;
+    width: 19%;
+    background: $primary_color_2;
+    border-radius: 9px;
     .navbar{
-        @include flex();
-
-    }
-    .logo{
-        font-family: 'poping-Semibold';
-        font-size: 40px;
-        color: white;
-        cursor: pointer;
-    }
-    .menu{
-        align-self: center;
-
-        ul{
-            @include flex();
-            li{
-                padding-left: 50px;
-            }
+        .logo,.item_menu{
+            display: flex;
+            align-items: center;
+            padding-top: 30px;
+            padding: 15px 20px;
         }
-        #burgger_menu_of{
-            display: none;
-            padding-top: 8px;
+        .item_menu:hover{
+            background-color: rgba(250, 239, 79, 0.4);
+            border-right: 7px solid $primary_color_1;
             cursor: pointer;
-            #lin_1_burger,#lin_2_burger,#lin_3_burger, #lin_1_burger_of,#lin_3_burger_of{
-                width: 36px;
-                height: 4px;
-                background-color: $primary_color_1;
-                margin-bottom: 4px;
-            }
-            #lin_1_burger_of,#lin_3_burger_of{
-                height: 6px;
-            }
-            #lin_2_burger_of{
-                display: none;
-            }
-            #lin_1_burger_of{
-                transform: rotate(50deg);
-                transition: 0.4s 0.4s;
-
-            }
-            #lin_3_burger_of{
-                transform: rotate(-410deg);
-                transition: 0.4s 0.4s;
-                margin-top: -10px;
-            }
+            transition: all 0.5s ease-in-out;
         }
-
-    }
-    @media screen and (max-width: 560px){
-        .menu{
-            ul{
-                display: none !important;
-            }
-        }
-        #burgger_menu_of{
-            display: block !important;
-        }
-
-    }
-}
-
-#navbar_mobile,#navbar_mobile_on{
-    background-color: $primary_color_1;
-    position: relative;
-    width: 100%;
-    padding:30px;
-    display: block;
-    a{
-        display: block;
-        text-align: center;
-        padding-bottom: 25px;
-        &:hover{
+        .item_menu:hover a ,.item_menu:hover svg{
             color: white;
+            fill: white;
+        } 
+        h1{
+            color: $primary_color_1;
+            font-family: 'poping-Semibold';
+            font-size: 30px;
+        }
+        svg{
+            fill: $primary_color_1;
+            width: 16%;
+            height: auto;
+        }
+        img{
+            width: 20%;
+        }
+        a,h1{
+            padding-left: 20px;
+        }
+        .menu{
+            padding-top: 80px;
+        }
+        .FAQ{
+            padding-top: 100px;
         }
     }
-}
-#navbar_zone{
-    position: fixed;
-    z-index: 100;
-    transition: 0.4s 0.4s;
-    bottom: 1000px;
-    width: 100%;
+    @media screen and (max-width: 1280px) 
+    {
+        .navbar{
+            .logo{
+                display: block;
+                text-align: center;
+                h1{
+                    font-size: 25px;
+                    padding-left: 0px;
+                }
+                svg{
+                    width:40%;
+                }
+            }
 
-}
-#navbar_mobile_on{
-    position: fixed;
-    width: 100%;
-    transition: 0.4s 0.4s;
-    z-index: 100;
-    bottom: 0px;
-}
+        }
 
-@media screen and (max-width: 560px){
-    #navbar_mobile,#navbar_mobile_on{
-        display: block;
+    }
+    @media screen and (max-width: 768px) 
+    {
+            width: 26% !important;
+
+    }
+    @media screen and (max-width: 560px) 
+    {
+            width: 100% !important;
+            .navbar{
+                .logo{
+                    svg{
+                        width: 20%;
+                    }
+                }
+                .menu_FAQ{
+                    display: flex;
+                    .menu{
+                        padding-top: 0px;
+                        display: flex;
+                    }
+                    svg{
+                        width: 100%;
+                    }
+                }
+                a{
+                display: none;
+                }
+                .FAQ{
+                    padding-top: 0px;
+                }
+
+            }
+
     }
 }
