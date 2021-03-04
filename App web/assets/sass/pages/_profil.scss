@@ -1,0 +1,95 @@
+.profil{
+   .zone_main_profil{
+       h1{
+           color:$primary_color_3;
+           padding-top:15px;
+       }
+       .zone_informations{
+           background-color: $primary_color_4;
+           border-radius: 7px;
+           padding: 3% 8%;
+           margin-top: 20px;
+           margin-bottom: 20px;
+           .info_personel{
+               @include flex();
+            p{
+                padding-bottom: 30px;
+                font-size: 1.1rem;
+            }
+           }
+           .btn_logout{
+            text-align: -webkit-right;
+            button:hover{
+                @include button(-5px -5px 0px 1px black);
+            }
+           }
+       }
+   } 
+   .zone_student{
+        h1{
+            color: $primary_color_1;
+        }
+        h2{
+            font-family: 'poping-Semibold';
+        }
+        .all_note{
+            @include flex();
+            justify-content: space-evenly;
+            margin-top: 20px;
+            .card_notes{
+                border: 1px solid #C2AE2B;
+                background-color: $primary_color_4;
+                border-radius: 7px;
+                text-align: center;
+                width: 140px;
+                height: 120px;
+                padding-top: 9px;
+            }
+        }
+   }
+   
+   @media screen and (max-width: 768px) {
+    h1{
+        font-size: 1.5rem;
+    }
+    .zone_main_profil{
+        .zone_informations{
+            p{
+                font-size: 0.9rem !important;
+            }
+            button{
+                padding:11px 30px;
+            }
+        }
+    }
+    
+   }
+   .zone_student{
+    .all_note{
+        .card_notes{
+            width: 100px;
+            h2{
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 560px){
+    .zone_main_profil{
+        .zone_informations{
+            .info_personel{
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+    .zone_student{
+        .all_note{
+            display: block;
+            .card_notes{
+
+            }
+        }
+    }
+}
+}

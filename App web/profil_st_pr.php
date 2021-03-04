@@ -1,4 +1,15 @@
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>PROFIL</title>
+</head>
+<body>
+<section class="haeder_main">
+    <header>
         <div class="navbar">
             <div class="logo">
             <svg id="Layer_1" enable-background="new 0 0 496.158 496.158" height="512" viewBox="0 0 496.158 496.158" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m68.079 326.319c0-16.831 0-121.537 0-138.403l180 77.143 248.079-106.319-248.079-106.321-248.079 106.32 38.079 16.319v151.261c-17.459 6.191-30 22.864-30 42.42v75h90v-75c0-19.555-12.541-36.228-30-42.42z"/><path d="m113.079 239.84v78.169l135 67.5 135-67.5v-78.169l-135 57.856z"/></g></svg>                <h1>WECODE</h1>
@@ -185,3 +196,54 @@
 		</div>
         </div>
     </header>
+    <main class="profil">
+        <div class="container">
+            <div class="zone_main_profil">
+                <h1>Hi Faical welcome in  your profil !</h1>
+                <div class="zone_informations">
+                    <div class="info_personel">
+                        <div class=" name_prenom">
+                            <p><span>Nom : </span>Faical </p>
+                            <p><span>prénom : </span>Bahsis </p>
+                        </div>
+                        <div class="email_password">
+                            <p><span>Email : </span>Faissalabr@gmail.com</p>
+                            <p><span>Class : </span>Adalovelace </p>
+                        </div>
+                    </div>
+                    <div class="btn_logout">
+                            <button>Logout</button>
+                    </div>
+
+                </div>
+            </div>
+			<div class="zone_student">
+				<h1>Your notes</h1>
+				<div class="all_note">
+								<div class="card_notes">
+										<H1>HTML</H1>
+										<H2>16/20</H2>
+								</div>
+								<div class="card_notes">
+										<H1>CSS</H1>
+										<H2>16/20</H2>
+								</div>
+								<div class="card_notes">
+										<H1>JS</H1>
+										<H2>16/20</H2>
+								</div>
+								<div class="card_notes">
+										<H1>PHP</H1>
+										<H2>16/20</H2>
+								</div>
+							</div>
+			</div>
+
+        </div>
+    </main>
+</section>
+
+<?php include "assets/php/footer.php"?>
+
+</body>
+</html>

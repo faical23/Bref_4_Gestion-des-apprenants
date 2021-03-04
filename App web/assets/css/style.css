@@ -153,6 +153,15 @@ p {
   padding-bottom: 30px;
 }
 
+h1 {
+  font-family: 'poping-Semibold';
+  font-size: 2rem;
+}
+
+span {
+  color: #C2AE2B;
+}
+
 button {
   display: block;
   background-color: #C2AE2B;
@@ -209,8 +218,6 @@ header .navbar .item_menu:hover a, header .navbar .item_menu:hover svg {
 
 header .navbar h1 {
   color: #C2AE2B;
-  font-family: 'poping-Semibold';
-  font-size: 30px;
 }
 
 header .navbar svg {
@@ -315,16 +322,16 @@ footer .footer_btn button:hover {
   }
 }
 
-.login .zone_main {
+.login .zone_main_login {
   display: flex;
   justify-content: space-between;
 }
 
-.login .zone_main .animation_img img {
+.login .zone_main_login .animation_img img {
   width: 75%;
 }
 
-.login .zone_main form {
+.login .zone_main_login form {
   background-color: #E3E2E2;
   border-radius: 7px;
   width: 40%;
@@ -333,57 +340,57 @@ footer .footer_btn button:hover {
   margin-top: 20px;
 }
 
-.login .zone_main form .checkout {
+.login .zone_main_login form .checkout {
   display: flex;
   align-items: center;
 }
 
-.login .zone_main form .checkout .input_data {
+.login .zone_main_login form .checkout .input_data {
   width: 7%;
   margin-bottom: 0px;
 }
 
-.login .zone_main form .checkout p {
+.login .zone_main_login form .checkout p {
   padding-left: 10px;
 }
 
-.login .zone_main form .btn_form {
+.login .zone_main_login form .btn_form {
   text-align: -webkit-right;
 }
 
-.login .zone_main form .btn_form button {
+.login .zone_main_login form .btn_form button {
   padding: 11px 43px;
 }
 
-.login .zone_main form .btn_form button:hover {
+.login .zone_main_login form .btn_form button:hover {
   box-shadow: -5px -5px 0px 1px black;
 }
 
-.login .zone_main p {
+.login .zone_main_login p {
   text-align: end;
 }
 
 @media screen and (max-width: 1280px) {
-  .login .zone_main .animation_img img {
+  .login .zone_main_login .animation_img img {
     width: 90%;
   }
-  .login .zone_main form {
+  .login .zone_main_login form {
     width: 65%;
     height: 500px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .login .zone_main {
+  .login .zone_main_login {
     display: grid;
   }
-  .login .zone_main .animation_img {
+  .login .zone_main_login .animation_img {
     order: 1;
   }
-  .login .zone_main .animation_img img {
+  .login .zone_main_login .animation_img img {
     width: 100%;
   }
-  .login .zone_main form {
+  .login .zone_main_login form {
     order: 0;
     margin-left: auto;
     margin-right: auto;
@@ -391,11 +398,97 @@ footer .footer_btn button:hover {
 }
 
 @media screen and (max-width: 560px) {
-  .login .zone_main .animation_img img {
+  .login .zone_main_login .animation_img img {
     width: 100%;
   }
-  .login .zone_main form {
+  .login .zone_main_login form {
     width: 90%;
     height: 450px;
+  }
+}
+
+.profil .zone_main_profil h1 {
+  color: #A8A8A5;
+  padding-top: 15px;
+}
+
+.profil .zone_main_profil .zone_informations {
+  background-color: #E3E2E2;
+  border-radius: 7px;
+  padding: 3% 8%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.profil .zone_main_profil .zone_informations .info_personel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profil .zone_main_profil .zone_informations .info_personel p {
+  padding-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.profil .zone_main_profil .zone_informations .btn_logout {
+  text-align: -webkit-right;
+}
+
+.profil .zone_main_profil .zone_informations .btn_logout button:hover {
+  box-shadow: -5px -5px 0px 1px black;
+}
+
+.profil .zone_student h1 {
+  color: #C2AE2B;
+}
+
+.profil .zone_student h2 {
+  font-family: 'poping-Semibold';
+}
+
+.profil .zone_student .all_note {
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.profil .zone_student .all_note .card_notes {
+  border: 1px solid #C2AE2B;
+  background-color: #E3E2E2;
+  border-radius: 7px;
+  text-align: center;
+  width: 140px;
+  height: 120px;
+  padding-top: 9px;
+}
+
+@media screen and (max-width: 768px) {
+  .profil h1 {
+    font-size: 1.5rem;
+  }
+  .profil .zone_main_profil .zone_informations p {
+    font-size: 0.9rem !important;
+  }
+  .profil .zone_main_profil .zone_informations button {
+    padding: 11px 30px;
+  }
+}
+
+.profil .zone_student .all_note .card_notes {
+  width: 100px;
+}
+
+.profil .zone_student .all_note .card_notes h2 {
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 560px) {
+  .profil .zone_main_profil .zone_informations .info_personel {
+    display: block;
+    text-align: center;
+  }
+  .profil .zone_student .all_note {
+    display: block;
   }
 }

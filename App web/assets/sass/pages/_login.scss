@@ -1,5 +1,5 @@
 .login{
-    .zone_main{
+    .zone_main_login{
 
         @include flex();
         .animation_img{
@@ -42,7 +42,7 @@
     }
     }
     @media screen and (max-width: 1280px) {
-        .zone_main{
+        .zone_main_login{
             .animation_img{
                 img{
                     width: 90%;
@@ -55,7 +55,7 @@
         }
     }
     @media screen and (max-width: 768px) {
-        .zone_main{
+        .zone_main_login{
             display:grid;
             .animation_img{
                 order: 1;
@@ -71,7 +71,7 @@
     }
     @media screen and (max-width: 560px) 
     {
-        .zone_main{
+        .zone_main_login{
             .animation_img{
                 img{
                     width: 100%;
