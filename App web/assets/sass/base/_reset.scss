@@ -61,8 +61,7 @@ body{
 	background-color: black;
 }
 .haeder_main{
-	display: flex;
-	justify-content: space-between;
+ 	@include flex();
 	@media screen and (max-width: 560px) 
     {
 		display: block;
@@ -71,9 +70,23 @@ body{
 main{
     background: $primary_color_2;
 	width: 80%;
+
+	@media screen and (max-width: 768px) 
+    {
+		overflow: scroll;
+		height: 600px;
+    }
+	@media screen and (max-width: 560px) 
+    {
+		width: 100%;
+		margin-top: 5px;
+    }
 }
 
 
 main , footer{
 	border-radius: 9px;
+}
+.container{
+	padding: 0% 3%;
 }

@@ -33,3 +33,17 @@
         font-weight: 300;
         cursor: pointer;
     }
+
+    p{
+        display: block;
+        color: $primary_color_2;
+        font-family: 'poping-Regular';
+
+    }
+    .form_titre{
+        font-family: 'poping-Semibold';
+        font-size: 25px;
+        color: $primary_color_1;
+        text-align: center;
+        padding-bottom: 30px;
+    }

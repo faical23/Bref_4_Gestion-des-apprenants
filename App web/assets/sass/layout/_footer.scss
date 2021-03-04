@@ -10,6 +10,14 @@ footer{
         font-family: 'poping-Regular';
         font-size: 15px;
     }
+    .footer_btn{
+        text-align: -webkit-center;
+    button{
+        &:hover{
+            @include button(-5px -5px 0px 1px white);
+        }
+    }
+}
     @media screen and (max-width: 560px) {
         display: block;
         padding: 5% 0%;
