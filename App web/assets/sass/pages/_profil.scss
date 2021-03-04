@@ -33,9 +33,10 @@
             font-family: 'poping-Semibold';
         }
         .all_note{
-            @include flex();
-            justify-content: space-evenly;
-            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit ,minmax(150px,1fr));
+            justify-items: center;
+            margin-top: 10px;
             .card_notes{
                 border: 1px solid #C2AE2B;
                 background-color: $primary_color_4;
@@ -44,10 +45,63 @@
                 width: 140px;
                 height: 120px;
                 padding-top: 9px;
+                margin-bottom: 10px;
             }
         }
    }
    
+   .zone_formateur{
+       text-align: center;
+       .btn_add{
+            text-align: -webkit-center;
+            button:hover{
+                @include button(-5px -5px 0px 1px white);
+            }
+       }
+       .space_name_student,.space_student{
+        padding: 12px;
+        border-radius: 9px;
+       }
+       
+       .space_name_student{
+        background-color: black;
+        color:$primary_color_1;
+        .titre_table{
+            th{
+                padding:0px 26px;
+                font-family: 'poping-Medium';
+                font-size: 16px;
+
+            }
+        }
+       }
+       .space_student{
+        background-color: $primary_color_4;
+        color:$primary_color_2;
+        margin:5px 0px;
+        .student_table{
+            td{
+                padding:0px 32px;
+                font-family: 'poping-Medium';
+                font-size: 16px;
+                .crud{
+                    display: flex;
+                    svg{
+                        fill: $primary_color_2;
+                        margin:0px 10px;
+                        cursor: pointer;
+                        &:hover{
+                            fill:$primary_color_1;
+                        }
+                    }
+                }
+            }
+        }
+       }
+
+   }
+
+
    @media screen and (max-width: 768px) {
     h1{
         font-size: 1.5rem;
@@ -75,19 +129,12 @@
     }
 }
 @media screen and (max-width: 560px){
+        text-align: center;
+
     .zone_main_profil{
         .zone_informations{
             .info_personel{
                 display: block;
-                text-align: center;
-            }
-        }
-    }
-    .zone_student{
-        .all_note{
-            display: block;
-            .card_notes{
-
             }
         }
     }

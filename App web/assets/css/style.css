@@ -447,10 +447,10 @@ footer .footer_btn button:hover {
 }
 
 .profil .zone_student .all_note {
-  display: flex;
-  justify-content: space-between;
-  justify-content: space-evenly;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-items: center;
+  margin-top: 10px;
 }
 
 .profil .zone_student .all_note .card_notes {
@@ -461,6 +461,61 @@ footer .footer_btn button:hover {
   width: 140px;
   height: 120px;
   padding-top: 9px;
+  margin-bottom: 10px;
+}
+
+.profil .zone_formateur {
+  text-align: center;
+}
+
+.profil .zone_formateur .btn_add {
+  text-align: -webkit-center;
+}
+
+.profil .zone_formateur .btn_add button:hover {
+  box-shadow: -5px -5px 0px 1px white;
+}
+
+.profil .zone_formateur .space_name_student, .profil .zone_formateur .space_student {
+  padding: 12px;
+  border-radius: 9px;
+}
+
+.profil .zone_formateur .space_name_student {
+  background-color: black;
+  color: #C2AE2B;
+}
+
+.profil .zone_formateur .space_name_student .titre_table th {
+  padding: 0px 26px;
+  font-family: 'poping-Medium';
+  font-size: 16px;
+}
+
+.profil .zone_formateur .space_student {
+  background-color: #E3E2E2;
+  color: #2B2F33;
+  margin: 5px 0px;
+}
+
+.profil .zone_formateur .space_student .student_table td {
+  padding: 0px 32px;
+  font-family: 'poping-Medium';
+  font-size: 16px;
+}
+
+.profil .zone_formateur .space_student .student_table td .crud {
+  display: flex;
+}
+
+.profil .zone_formateur .space_student .student_table td .crud svg {
+  fill: #2B2F33;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.profil .zone_formateur .space_student .student_table td .crud svg:hover {
+  fill: #C2AE2B;
 }
 
 @media screen and (max-width: 768px) {
@@ -484,11 +539,10 @@ footer .footer_btn button:hover {
 }
 
 @media screen and (max-width: 560px) {
-  .profil .zone_main_profil .zone_informations .info_personel {
-    display: block;
+  .profil {
     text-align: center;
   }
-  .profil .zone_student .all_note {
+  .profil .zone_main_profil .zone_informations .info_personel {
     display: block;
   }
 }
