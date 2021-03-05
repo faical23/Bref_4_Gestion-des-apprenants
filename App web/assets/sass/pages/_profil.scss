@@ -58,47 +58,89 @@
                 @include button(-5px -5px 0px 1px white);
             }
        }
-       .space_name_student,.space_student{
-        padding: 12px;
-        border-radius: 9px;
-       }
+    //    .space_name_student,.space_student{
+    //     padding: 12px;
+    //     border-radius: 9px;
+    //    }
        
-       .space_name_student{
-        background-color: black;
-        color:$primary_color_1;
-        .titre_table{
+    //    .space_name_student{
+    //     background-color: black;
+    //     color:$primary_color_1;
+    //     .titre_table{
+    //         th{
+    //             padding:0px 26px;
+    //             font-family: 'poping-Medium';
+    //             font-size: 16px;
+
+    //         }
+    //     }
+    //    }
+    //    .space_student{
+    //     background-color: $primary_color_4;
+    //     color:$primary_color_2;
+    //     margin:5px 0px;
+    //     .student_table{
+    //         td{
+    //             padding:0px 32px;
+    //             font-family: 'poping-Medium';
+    //             font-size: 16px;
+    //             .crud{
+    //                 display: flex;
+    //                 svg{
+    //                     fill: $primary_color_2;
+    //                     margin:0px 10px;
+    //                     cursor: pointer;
+    //                     &:hover{
+    //                         fill:$primary_color_1;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    //    }
+
+        table{
+            border: none;
+            border-collapse: collapse;
+            padding: 0;
+            border-left: none;
+            border-right: none;
+            font-family: 'poping-Medium';
             th{
-                padding:0px 26px;
-                font-family: 'poping-Medium';
-                font-size: 16px;
+                background-color:black;
+                color: $primary_color_1;
+                padding: 10px 20px;  
+                text-align: center;
+                font-size: 1rem;
+          }
+          td{
+            background-color: $primary_color_4;
+            color: $primary_color_2;
+            padding: 10px 20px;  
+            text-align: center;
+            border-top: 5px solid $primary_color_2;
+          }
+          .student_zone{
+              margin: 5px 0px;
+          }
+          svg{
+            width: 35px;
+            cursor: pointer;
+            fill: $primary_color_2;
+            &:hover{
+                fill: $primary_color_1;
+            }
+          }
 
+        }
+        @media screen and (max-width: 1024px){
+            td:nth-child(4),td:nth-child(5),td:nth-child(6),td:nth-child(7){
+                display: none;
+            }
+            th:nth-child(4),th:nth-child(5),th:nth-child(6),th:nth-child(7){
+                display: none;
             }
         }
-       }
-       .space_student{
-        background-color: $primary_color_4;
-        color:$primary_color_2;
-        margin:5px 0px;
-        .student_table{
-            td{
-                padding:0px 32px;
-                font-family: 'poping-Medium';
-                font-size: 16px;
-                .crud{
-                    display: flex;
-                    svg{
-                        fill: $primary_color_2;
-                        margin:0px 10px;
-                        cursor: pointer;
-                        &:hover{
-                            fill:$primary_color_1;
-                        }
-                    }
-                }
-            }
-        }
-       }
-
    }
 
 
@@ -140,3 +182,81 @@
     }
 }
 }
+
+.place_validation{
+    margin-top: 50px;
+    width: 70%;
+    border: 1px solid white;
+    border-radius: 10px;
+    @include centred();
+    background-color: $primary_color_4;
+    color: $primary_color_2;
+    h1{
+        padding:10px 0px ;
+        font-size: 1.2rem;
+    }
+    .zone_input{
+        display: grid;
+        grid-template-columns: repeat(auto-fit ,minmax(250px,1fr));
+        input{
+            @include centred();
+        }
+
+    }
+    .zone_input_note{
+        display: grid;
+        grid-template-columns: repeat(auto-fit ,minmax(230px,1fr));
+        justify-items: right;
+        .place_not{
+            display: flex;
+            label{
+                font-family: 'poping-Medium';
+                font-size: 1rem;
+                padding:8px;
+            }
+            input{
+                width: 25%;
+                height: 40px;
+            }
+        }
+    }
+    .btn_valide{
+        text-align: -webkit-center;
+        button:hover{
+            @include button(-5px -5px 0px 1px black);
+        }
+    }
+    @media screen and (max-width: 1024px){
+        .zone_input_note{
+            .place_not{
+                justify-content: center;
+
+            }
+        }
+    }
+    @media screen and (max-width: 560px){
+        .zone_input_note{
+            grid-template-columns: repeat(auto-fit ,minmax(100px,1fr));
+            .place_not{
+                justify-content: center;
+                input{
+                    width: 40%;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 400px){
+        input{
+            width: 60%;
+            height: 30px;
+            margin-left: 20px !important;
+
+        }
+        button{
+            padding:8px 30px;
+        }
+    }
+}
+
+
+

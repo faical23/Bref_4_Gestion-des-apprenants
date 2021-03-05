@@ -476,46 +476,52 @@ footer .footer_btn button:hover {
   box-shadow: -5px -5px 0px 1px white;
 }
 
-.profil .zone_formateur .space_name_student, .profil .zone_formateur .space_student {
-  padding: 12px;
-  border-radius: 9px;
+.profil .zone_formateur table {
+  border: none;
+  border-collapse: collapse;
+  padding: 0;
+  border-left: none;
+  border-right: none;
+  font-family: 'poping-Medium';
 }
 
-.profil .zone_formateur .space_name_student {
+.profil .zone_formateur table th {
   background-color: black;
   color: #C2AE2B;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1rem;
 }
 
-.profil .zone_formateur .space_name_student .titre_table th {
-  padding: 0px 26px;
-  font-family: 'poping-Medium';
-  font-size: 16px;
-}
-
-.profil .zone_formateur .space_student {
+.profil .zone_formateur table td {
   background-color: #E3E2E2;
   color: #2B2F33;
+  padding: 10px 20px;
+  text-align: center;
+  border-top: 5px solid #2B2F33;
+}
+
+.profil .zone_formateur table .student_zone {
   margin: 5px 0px;
 }
 
-.profil .zone_formateur .space_student .student_table td {
-  padding: 0px 32px;
-  font-family: 'poping-Medium';
-  font-size: 16px;
-}
-
-.profil .zone_formateur .space_student .student_table td .crud {
-  display: flex;
-}
-
-.profil .zone_formateur .space_student .student_table td .crud svg {
-  fill: #2B2F33;
-  margin: 0px 10px;
+.profil .zone_formateur table svg {
+  width: 35px;
   cursor: pointer;
+  fill: #2B2F33;
 }
 
-.profil .zone_formateur .space_student .student_table td .crud svg:hover {
+.profil .zone_formateur table svg:hover {
   fill: #C2AE2B;
+}
+
+@media screen and (max-width: 1024px) {
+  .profil .zone_formateur td:nth-child(4), .profil .zone_formateur td:nth-child(5), .profil .zone_formateur td:nth-child(6), .profil .zone_formateur td:nth-child(7) {
+    display: none;
+  }
+  .profil .zone_formateur th:nth-child(4), .profil .zone_formateur th:nth-child(5), .profil .zone_formateur th:nth-child(6), .profil .zone_formateur th:nth-child(7) {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -544,5 +550,89 @@ footer .footer_btn button:hover {
   }
   .profil .zone_main_profil .zone_informations .info_personel {
     display: block;
+  }
+}
+
+.place_validation {
+  margin-top: 50px;
+  width: 70%;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #E3E2E2;
+  color: #2B2F33;
+}
+
+.place_validation h1 {
+  padding: 10px 0px;
+  font-size: 1.2rem;
+}
+
+.place_validation .zone_input {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.place_validation .zone_input input {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.place_validation .zone_input_note {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  justify-items: right;
+}
+
+.place_validation .zone_input_note .place_not {
+  display: flex;
+}
+
+.place_validation .zone_input_note .place_not label {
+  font-family: 'poping-Medium';
+  font-size: 1rem;
+  padding: 8px;
+}
+
+.place_validation .zone_input_note .place_not input {
+  width: 25%;
+  height: 40px;
+}
+
+.place_validation .btn_valide {
+  text-align: -webkit-center;
+}
+
+.place_validation .btn_valide button:hover {
+  box-shadow: -5px -5px 0px 1px black;
+}
+
+@media screen and (max-width: 1024px) {
+  .place_validation .zone_input_note .place_not {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .place_validation .zone_input_note {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  .place_validation .zone_input_note .place_not {
+    justify-content: center;
+  }
+  .place_validation .zone_input_note .place_not input {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .place_validation input {
+    width: 60%;
+    height: 30px;
+    margin-left: 20px !important;
+  }
+  .place_validation button {
+    padding: 8px 30px;
   }
 }
