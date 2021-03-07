@@ -476,6 +476,11 @@ footer .footer_btn button:hover {
   box-shadow: -5px -5px 0px 1px white;
 }
 
+.profil .zone_formateur .space_student {
+  overflow: scroll;
+  height: 400px;
+}
+
 .profil .zone_formateur table {
   border: none;
   border-collapse: collapse;

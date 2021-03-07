@@ -6,8 +6,7 @@
 
 require "connection.php";
 
-if(isset($_POST["submit"]))
-    {
+
         $name = $_POST["name"];
         $prénom = $_POST["prénom"];
         $email = $_POST["email"];
@@ -16,6 +15,13 @@ if(isset($_POST["submit"]))
         $css = $_POST["Css"];
         $js = $_POST["Js"];
         $php= $_POST["Php"];
+
+/* insert data */
+
+
+if(isset($_POST["submit"]))
+    {
+
 
             if(empty($name) || empty($prénom) || empty($email) || empty($password))
             {
@@ -49,6 +55,7 @@ if(isset($_POST["submit"]))
 
 }
 
+    /* delete data */
 
     $sql_requet = "DELETE FROM student WHERE id ='" . $_GET["id"] . "'";
     if(mysqli_query($connection_DB,$sql_requet))
@@ -60,12 +67,29 @@ if(isset($_POST["submit"]))
         echo "errorrrrrrrr";
     }
 
-    // if(isset($_POST["delete"]))
-    // {
-        $id_num = $_GET["id"];
-        
-        echo $id_num;
-    // }
 
+    /*     update data*/
+
+    if(isset($_POST["update"]))
+    {
+        $id = $_GET["id"];
+
+        echo $name ."<br/>";
+        echo $prénom ."<br/>";
+        echo $password ."<br/>";
+        echo $email ."<br/>";
+        echo $id ."<br/>";
+
+        $sql_requet = "UPDATE student SET nom = '$name' , prenom = '$prénom' , password_student = '$password', email = '$email' WHERE id =$id ";
+            if(mysqli_query($connection_DB,$sql_requet))
+            {
+                header('Location: ../../profil_st_pr.php');
+            }
+            else{
+                echo "erroooor";
+            }
+    }
+
+    
 ?>
 

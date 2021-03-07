@@ -99,6 +99,11 @@
     //     }
     //    }
 
+        .space_student{
+            overflow: scroll;
+            height: 400px;
+            
+        }
         table{
             border: none;
             border-collapse: collapse;
@@ -259,4 +264,12 @@
 }
 
 
+
+// #btn_update_off{
+//     display: none;
+// }
+// #btn_valide_on{
+//     display: flex;
+//     justify-content: center;
+// }
 
