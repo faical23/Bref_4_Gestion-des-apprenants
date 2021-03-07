@@ -11,6 +11,7 @@
     define('DB_NAME','gestion_apprenents');
 
     $connection_DB = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
+    
     // if($connection_DB == true)
     // {
     //     echo "its work <br/>";

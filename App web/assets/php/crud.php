@@ -8,7 +8,7 @@ require "connection.php";
 
 if(isset($_POST["submit"]))
     {
-        $name = mysqli_real_escape_string($connection_DB,$_POST["name"]) ;
+        $name = $_POST["name"];
         $prénom = $_POST["prénom"];
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -37,7 +37,7 @@ if(isset($_POST["submit"]))
             
                     if(mysqli_query($connection_DB,$sql_requet))
                     {
-                        echo "add succesfly";
+                        header('Location: ../../profil_st_pr.php');
                     }
                     else{
                         echo "errorrrrrrrr";
@@ -48,7 +48,24 @@ if(isset($_POST["submit"]))
             
 
 }
-$student = mysqli_query($connection_DB,"SELECT * FROM student");
-echo mysqli_num_rows($student);
+
+
+    $sql_requet = "DELETE FROM student WHERE id ='" . $_GET["id"] . "'";
+    if(mysqli_query($connection_DB,$sql_requet))
+    {
+        // echo "succesfly";
+        header('Location: ../../profil_st_pr.php');
+    }
+    else{
+        echo "errorrrrrrrr";
+    }
+
+    // if(isset($_POST["delete"]))
+    // {
+        $id_num = $_GET["id"];
+        
+        echo $id_num;
+    // }
+
 ?>
 
