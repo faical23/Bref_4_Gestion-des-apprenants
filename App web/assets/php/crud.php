@@ -48,6 +48,7 @@ if(isset($_POST["submit"]))
             
 
 }
-
+$student = mysqli_query($connection_DB,"SELECT * FROM student");
+echo mysqli_num_rows($student);
 ?>
 
