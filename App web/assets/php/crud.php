@@ -44,7 +44,8 @@ if(isset($_POST["submit"]))
                     if(mysqli_query($connection_DB,$sql_requet))
                     {
                         header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');
-                    }
+                        
+                    }   
                     else{
                         echo "errorrrrrrrr";
                     }
