@@ -43,7 +43,7 @@ if(isset($_POST["submit"]))
             
                     if(mysqli_query($connection_DB,$sql_requet))
                     {
-                        header('Location: ../../profil_st_pr.php');
+                        header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');
                     }
                     else{
                         echo "errorrrrrrrr";
@@ -55,35 +55,28 @@ if(isset($_POST["submit"]))
 
 }
 
-    /* delete data */
 
-    $sql_requet = "DELETE FROM student WHERE id ='" . $_GET["id"] . "'";
-    if(mysqli_query($connection_DB,$sql_requet))
-    {
-        // echo "succesfly";
-        header('Location: ../../profil_st_pr.php');
-    }
-    else{
-        echo "errorrrrrrrr";
-    }
 
 
     /*     update data*/
 
+    $update_icon = false;
+
+    
+
     if(isset($_POST["update"]))
     {
         $id = $_GET["id"];
-
         echo $name ."<br/>";
         echo $prénom ."<br/>";
         echo $password ."<br/>";
         echo $email ."<br/>";
         echo $id ."<br/>";
 
-        $sql_requet = "UPDATE student SET nom = '$name' , prenom = '$prénom' , password_student = '$password', email = '$email' WHERE id =$id ";
+        $sql_requet = "UPDATE student SET nom = '$name' , prenom = '$prénom' , password_student = '$password', email = '$email', Html = '$html', Css = '$css' , javascript = '$js' , Php='$php'  WHERE id =$id ";
             if(mysqli_query($connection_DB,$sql_requet))
             {
-                header('Location: ../../profil_st_pr.php');
+                header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php=&btn=');
             }
             else{
                 echo "erroooor";
