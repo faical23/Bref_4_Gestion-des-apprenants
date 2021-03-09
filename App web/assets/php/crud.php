@@ -23,21 +23,6 @@ if(isset($_POST["submit"]))
     {
 
 
-            if(empty($name) || empty($prénom) || empty($email) || empty($password))
-            {
-                echo "please write all informations";
-            }
-            else{
-                if(strlen($name) <= 3 || strlen($prénom) <= 3)
-                {
-                    echo "name is small";
-                }
-                elseif(strlen($password) <= 6)
-                {
-                    echo "password is small";
-                }
-                else{
-
                     $sql_requet = "INSERT INTO student (nom,prenom,email,password_student,Html,Css,Javascript,Php)
                     VALUES ('$name','$prénom','$email','$password','$html','$css','$js','$php')";
             
@@ -49,9 +34,9 @@ if(isset($_POST["submit"]))
                     else{
                         echo "errorrrrrrrr";
                     }
-                }
+    
 
-            }
+            
             
 
 }

@@ -645,3 +645,7 @@ footer .footer_btn button:hover {
     padding: 8px 30px;
   }
 }
+
+.swal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
