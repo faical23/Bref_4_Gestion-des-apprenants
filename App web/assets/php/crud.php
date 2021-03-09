@@ -34,10 +34,6 @@ if(isset($_POST["submit"]))
                     else{
                         echo "errorrrrrrrr";
                     }
-    
-
-            
-            
 
 }
 

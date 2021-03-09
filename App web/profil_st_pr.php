@@ -115,13 +115,18 @@
 				</table>
 					</div>					
 				</div>
-				<div class="popup_see_note">
+					<div class="popup_see_note">
+
+
+					</div>
 				</div>
 
-				<form id="validee" class="place_validation" action="assets/php/crud.php?id=<?php echo $_GET["id"];?>" method="POST">
+
+
+				<form id="validee"  action="assets/php/crud.php?id=<?php echo $_GET["id"]?>"  class="place_validation"  method="POST">
 						<h1>Student informations</h1>
 						<div class="zone_input">
-							<input type="text" name="name" placeholder="First Name"	value="<?php echo $_GET["name"]?>">
+							<input class="name" type="text" name="name" placeholder="First Name"	value="<?php echo $_GET["name"]?>">
 							<input type="text" name="prénom" placeholder="Last name"  value="<?php echo $_GET["prenom"]?>"  >
 							<input type="Email" name="email" placeholder="Email"  value="<?php echo $_GET["email"]?>"  >
 							<input type="text" name="password" placeholder="Password"   value="<?php echo $_GET["password"]?>" >
@@ -157,7 +162,9 @@
 						{
 						?>
 							<div class="btn_valide"  id="btn_valide_on">
-								<button id="valide" name="submit" >valide</button>
+								<input type="submit" value="Submit" name="submit">
+
+								<!-- <button id="valide" name="submit" >valide</button> -->
 							</div>							
 						<?php
 						}else{
@@ -170,8 +177,8 @@
 						}
 						?>
 						
-				</form>
-			</div>
+				</div>
+			</form>
 
         </div>
     </main>
@@ -182,19 +189,42 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 
+
+	var popup_see_note = document.querySelector(".popup_see_note");
+
+	var pop_up_show = true 
+
 see_data = (id_user , name  , prenom ,email , password , html , css , js , php) =>{
-	// swal(name + " " + prenom , " email " + email + " password : " +  password + " note : " + html + css + js + php);
-	swal({
-		title: name + " " + prenom,
-		text: "Email : " + email + "<br/>" + password,
-		// text: "Password : " + password,
-		// title: "Notes",
-		// text: " HTML : " + html,
-		// text: " CSS : " + css,
-		// text: " JAVASCRIPT : " + js,
-		// text: " PHP : " + php,
-	});
+
+	if(pop_up_show == true)
+	{
+
+		popup_see_note.style="display:grid !important";
+
+		popup_see_note.innerHTML = `<h1>${name} ${prenom}</h1>
+								<p>Class : <span>Adalovelace</span></p>
+								<p>Email : <span>${email}</span></p>
+								<p>Password : <span>${password}</span></p>
+								<h2>Notes</h2>
+								<p>HTML : <span>${html}</span></p>
+								<p>CSS : <span>${css}</span></p>
+								<p>JAVASCRIPT : <span>${js}</span></p>
+								<p>PHP : <span>${php}</span></p>
+
+								<div class="btn_popup_okey">
+									<button class="button_okey" onclick="pop_up_display()">Okey</button>
+						</div>`;
+
+
+	}
+
 }
+var button_okey = document.querySelector(".button_okey");
+
+pop_up_display = () =>{
+	popup_see_note.style="display:none !important";
+}
+
 
 
 function delete_popup(id_user){
