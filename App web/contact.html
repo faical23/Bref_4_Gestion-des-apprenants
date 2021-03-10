@@ -1,4 +1,26 @@
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/contact.css">
+	<script src="https://kit.fontawesome.com/ecb8b74a3a.js" crossorigin="anonymous"></script>
+	<script>
+		function verif()
+		{ a=contact-form.username.value;
+		exp=/^[a-zA-Z ]+$/;
+		if(exp.test(a) ==false) {alert("attention votre nom n'est pas valid");return false;}
+
+	}
+
+	</script>
+</head>
+<body>
+    <section class="mon-conteneur">
+    <header>
         <div class="navbar">
             <div class="logo">
             <svg id="Layer_1" enable-background="new 0 0 496.158 496.158" height="512" viewBox="0 0 496.158 496.158" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m68.079 326.319c0-16.831 0-121.537 0-138.403l180 77.143 248.079-106.319-248.079-106.321-248.079 106.32 38.079 16.319v151.261c-17.459 6.191-30 22.864-30 42.42v75h90v-75c0-19.555-12.541-36.228-30-42.42z"/><path d="m113.079 239.84v78.169l135 67.5 135-67.5v-78.169l-135 57.856z"/></g></svg>                <h1>WECODE</h1>
@@ -185,3 +207,65 @@
 		</div>
         </div>
     </header>
+
+
+    <main class="box-contact">
+		
+        <div class="contenu-contact">
+			
+            <div class="before-form">
+				<h2 class="titre-contact">Get a quote</h2>
+				<p class="p-contact">full up the form and our team will back 
+					to you within 24 hours</p>
+					<div class="boite-info">
+						<i class="fas fa-phone-alt"></i>
+						<p class="info">+00 0000000000000</p></div>
+					<div class="boite-info"><i class="fas fa-at"></i>
+						<p class="info">student@gmail.com</p>
+						</div>
+					<div class="boite-info"><i class="fas fa-map-marker-alt"></i><p class="info">44, Rue AL massira SAFI</p>
+						</div>
+					<div class="reseau-sociaux">
+						<div class="moncercle"><i class="fab fa-twitter"></i></div>
+						<div class="moncercle"><i class="fab fa-youtube"></i></div>
+						<div class="moncercle"><i class="fab fa-instagram"></i></div>
+
+					</div>
+                </div>
+
+                <div class="contact-form">
+                	<form name="contact-form" action="" method="">
+				<h1 class="form-titre">Contact us</h1>
+				    <input type="text" name="username" placeholder="name">
+					<input type="email" name="email" placeholder="Email">
+					<input type="text" name="sujet" placeholder="subject">
+					<textarea name="msg" id="" cols="30" rows="10"  placeholder="message"></textarea>
+					<button class="btn-form" onclick="return verif()">Send</button>
+					
+					
+					
+				</form>
+				
+					
+				
+			</div>
+        
+            
+            
+    
+</div>
+    </main>
+   
+       
+
+   </section>
+
+    <footer>
+        <p>© Copyright 2021 Wecode, All Rights Reserved.</p>
+        <div class="footer_btn">
+            <button>Support</button>
+        </div>
+    </footer>
+    
+</body>
+</html>

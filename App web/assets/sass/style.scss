@@ -18,3 +18,10 @@
 // 5 - Pages;
 @import "pages/login";
 @import "pages/profil";
+
+.conteneur-haut{
+    display: flex;
+}
+.image-acceuil {
+    width: 50%;
+}
