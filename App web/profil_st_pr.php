@@ -54,7 +54,7 @@
 			</div> -->
 			<div class="zone_formateur">
 				<div class="btn_add">
-					<a href="profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=#validee" ><button >Add student</button></a>
+					<a href="profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php" ><button >Add student</button></a>
 
 					<div class="space_student">
 					<table cellspacing="0" cellpadding="0">
@@ -81,30 +81,32 @@
 										foreach($student as $value)
 										{
 							?>
-									<tr>
-										<td><?php echo $value["id"]; ?></td>
-										<td><?php echo $value["nom"]; ?></td>
-										<td><?php echo $value["prenom"]; ?></td>
-										<?php  $value["email"]?>
-										<?php  $value["password_student"]?>
-										<td><?php echo $value["Html"]; ?></td>
-										<td><?php echo $value["Css"]; ?></td>
-										<td><?php echo $value["Javascript"]; ?></td>
-										<td><?php echo $value["Php"]; ?></td>
-										<td>
-											<div class="icon_crud">
-												<a onclick="see_data(<?php echo $value['id']?> ,'<?php echo $value['nom']?>','<?php echo $value['prenom']?>','<?php echo $value['email']?>','<?php echo $value['password_student']?>','<?php echo $value['Html']?>','<?php echo $value['Css']?>','<?php echo $value['Javascript']?>','<?php echo $value['Php']?>') ">
-													<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"/></svg>
-												</a>
-												<a class="update_icon" name="update" href='profil_st_pr.php?id=<?php echo $value["id"]?>&name=<?php echo $value["nom"]?>&prenom=<?php echo $value["prenom"]?>&email=<?php echo $value["email"]?>&password=<?php echo $value["password_student"]?>&html=<?php echo $value["Html"]; ?>&css=<?php echo $value["Css"]?>&js=<?php echo $value["Javascript"]?>&php=<?php echo $value["Php"];?>&btn=true#validee'>
-													<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
-												</a>
-												<a class="delete_icon" onclick="delete_popup(<?php echo $value['id'] ;?>)">
-													<svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z"/></svg>
-												</a>
-											</div>
-										</td>
-									</tr>
+										<tr>
+											<td class="id"><?php echo $value["id"]; ?>									
+											</td>
+											<td class="nom"><?php echo $value["nom"]; ?></td>
+											<td class="prenom"><?php echo $value["prenom"]; ?></td>
+											<?php  $value["id"]?>
+											<?php  $value["email"]?>
+											<?php  $value["password_student"]?>
+											<td class="html"><?php echo $value["Html"]; ?></td>
+											<td  class="css"><?php echo $value["Css"]; ?></td>
+											<td class="java"><?php echo $value["Javascript"]; ?></td>
+											<td class="php"><?php echo $value["Php"]; ?></td>
+											<td>
+												<div class="icon_crud">
+													<a  onclick="see_data(<?php echo $value['id']?> ,'<?php echo $value['nom']?>','<?php echo $value['prenom']?>','<?php echo $value['email']?>','<?php echo $value['password_student']?>','<?php echo $value['Html']?>','<?php echo $value['Css']?>','<?php echo $value['Javascript']?>','<?php echo $value['Php']?>') ">
+														<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"/></svg>
+													</a>
+													<a onclick="imported('<?php echo $value['id']?>','<?php echo $value['nom']?>','<?php echo $value['prenom']?>','<?php echo $value['email']?>','<?php echo $value['password_student']?>','<?php echo $value['Html']?>','<?php echo $value['Css']?>','<?php echo $value['Javascript']?>','<?php echo $value['Php']?>')" class="update_icon" type="submit" name="update" href='#validee'>
+														<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
+													</a>
+													<a class="delete_icon" onclick="delete_popup(<?php echo $value['id'] ;?>)">
+														<svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z"/></svg>
+													</a>
+												</div>
+											</td>
+										</tr>
 
 							<?php
 									}
@@ -121,33 +123,40 @@
 					</div>
 				</div>
 
+							
 
-
-				<form id="validee"  action="assets/php/crud.php?id=<?php echo $_GET["id"]?>"  class="place_validation"  method="POST">
+				<form id="validee"  action="assets/php/crud.php?id="  class="place_validation"  method="POST">
 						<h1>Student informations</h1>
 						<div class="zone_input">
-							<input class="name" type="text" name="name" placeholder="First Name"	value="<?php echo $_GET["name"]?>">
-							<input type="text" name="prénom" placeholder="Last name"  value="<?php echo $_GET["prenom"]?>"  >
-							<input type="Email" name="email" placeholder="Email"  value="<?php echo $_GET["email"]?>"  >
-							<input type="text" name="password" placeholder="Password"   value="<?php echo $_GET["password"]?>" >
+							<input id="id_user"  name="id_user" placeholder="0" type="hidden"  >
+							<input  id="name" type="text" name="name" placeholder="First Name" id="name"	 >
+							<input id="prenom" type="text" id="prenom" name="prenom" placeholder="Last name"   >
+							<input id="email" type="Email" name="email" id="email" placeholder="Email"   >
+							<input id="password" type="text" id="password" name="password" placeholder="Password"   >
 						</div>
-						<h1>Student notes</h1>
+						<?php
+			$id_select = $_POST["id_select"];
+			echo $id
+
+
+	?>
+						<h1>Student notes </h1>
 						<div class="zone_input_note">
 							<div class="place_not">
 								<label >Html</label>
-								<input type="text" name="html" placeholder="0"   value="<?php echo $_GET["html"]?>">
+								<input id="html" type="text" name="html" placeholder="0"   >
 							</div>
 							<div class="place_not">
-							<input type="text" name="Css" placeholder="0"  value="<?php echo $_GET["css"]?>" >
+							<input  id="css" type="text" name="Css" placeholder="0"   >
 								<label >Css</label>
 							</div>
 							<div class="place_not">
 								<label >Js</label>
-								<input type="text" name="Js" placeholder="0"  value="<?php echo $_GET["js"]?>" >	
+								<input id="js" type="text" name="Js" placeholder="0"  >	
 
 							</div>
 							<div class="place_not">
-							<input type="text" name="Php" placeholder="0"   value="<?php echo $_GET["php"]?>" >
+							<input id="php" type="text" name="Php" placeholder="0"   >
 								<label >Php</label>
 							</div>
 						</div>	
@@ -156,26 +165,17 @@
 
 							
 						?>
-						<?php
-						$btn = $_GET['btn'];
-						if($btn == false)
-						{
-						?>
-							<div class="btn_valide"  id="btn_valide_on">
-								<input type="submit" value="Submit" name="submit">
 
-								<!-- <button id="valide" name="submit" >valide</button> -->
+
+							<div class="btn_valide"  >
+								<button type="submit"  id="valide"  name="submit" disabled >valide</button>
 							</div>							
-						<?php
-						}else{
-						?>
 
-							<div class="btn_valide " id="btn_update_off" >
-								<button id="update" name="update">Update</button>
+							<div class="btn_valide " >
+								<button id="update_btn" name="update" type="submit" style="display:none">Update</button>
 							</div>
-						<?php
-						}
-						?>
+
+						
 						
 				</div>
 			</form>
@@ -187,14 +187,55 @@
 <?php include "assets/php/footer.php"?>
 <script src="assets/js/main.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script>
 
+	/*  validation regix */
+
+	var inputName = document.getElementById("name")
+	var inputPrenom = document.getElementById("prenom")
+	var inputEmail = document.getElementById("email")
+	var inputPassword = document.getElementById("password")
+	
+	function validation_Name(par,regix , nmber_char){
+		var input_name = document.querySelector(`#${par}`);
+		var input_name_value = input_name.value; 
+		console.log("true");
+		console.log(input_name_value);
+		input_name.style="border:1px solid red ";
+
+			if(input_name_value .match(regix) && input_name_value .length >= nmber_char) { 
+				document.getElementById("valide").disabled = false; 
+				input_name.style="border:1px solid green ";
+
+			}
+			else{
+				document.getElementById("valide").disabled = true; 
+			}
+
+	}
+		inputName.addEventListener('keyup', () => {
+			validation_Name('name' , /^[a-zA-Z ]+$/ ,4)
+		})
+		inputPrenom.addEventListener('keyup', () => {
+			validation_Name('prenom' , /^[a-zA-Z ]+$/ ,4)
+		})
+		inputEmail.addEventListener('keyup', () => {
+			validation_Name('email' , /^[^ ]+@[^ ]+\.[a-z]{2,3}$/ , 5)
+		})
+		inputPassword.addEventListener('keyup', () => {
+			validation_Name('password' , /^[A-Za-z0-9]\w{5,}$/ , 5)
+		})
+
+
+	
+/* show popup data */
 
 	var popup_see_note = document.querySelector(".popup_see_note");
 
 	var pop_up_show = true 
 
-see_data = (id_user , name  , prenom ,email , password , html , css , js , php) =>{
+var see_data = (id_user , name  , prenom ,email , password , html , css , js , php) =>{
 
 	if(pop_up_show == true)
 	{
@@ -226,6 +267,7 @@ pop_up_display = () =>{
 }
 
 
+/* delete data */
 
 function delete_popup(id_user){
 
@@ -240,10 +282,6 @@ function delete_popup(id_user){
 		.then((willDelete) => {
 		if (willDelete) {
 			window.location.href = `assets/php/delete.php?id=${id_user}`;
-			// swal("Poof! Your imaginary file has been deleted!", {
-			// icon: "success",
-			// }			
-			// );
 		} else {
 			swal("Your imaginary file is safe!");
 		}
@@ -251,12 +289,32 @@ function delete_popup(id_user){
 
 }
 
+/* get data to update  */
 
-	
+function imported(user_id,user_name , user_prenom , user_email , user_pass , user_html ,user_css,user_js , user_php){
+
+
+	document.getElementById("id_user").value=user_id;
+	document.getElementById("name").value=user_name;
+	document.getElementById("prenom").value=user_prenom;
+	document.getElementById("email").value=user_email;
+	document.getElementById("password").value=user_pass;
+	document.getElementById("html").value=user_html;
+	document.getElementById("css").value=user_css;
+	document.getElementById("js").value=user_js;
+	document.getElementById("php").value=user_php;
+	document.getElementById("update_btn").style="display:block";
+	document.getElementById("valide").style="display:none";		
+
+	console.log(id);
+}
+
 
 
 
 </script>
+
+
 
 </body>
 </html>

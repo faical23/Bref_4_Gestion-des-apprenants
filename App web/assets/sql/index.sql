@@ -1,7 +1,7 @@
 Create Database getion_apprenents;    /*  create databe*/
 drop Database if exists getion_apprenents; /* delete  database */
 
-create table student (  /* create student tabel */
+create table 2student (  /* create student tabel */
 
     id INT PRIMARY KEY NOT NULL,
     nom VARCHAR(100) NOT NULL,
