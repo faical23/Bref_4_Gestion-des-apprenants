@@ -6,6 +6,8 @@
 
 require "connection.php";
 
+
+
         $id = $_POST["id_user"];
         $name = $_POST["name"];
         $prenom = $_POST["prenom"];
@@ -16,6 +18,13 @@ require "connection.php";
         $js = $_POST["Js"];
         $php= $_POST["Php"];
 
+        $regix_name = '/^[a-zA-Z ]+$/';
+        $regix_email = '/^[^ ]+@[^ ]+\.[a-z]{2,3}$/';
+        $regix_password = '/^[A-Za-z0-9]\w{5,}$/';
+
+
+
+
 /* insert data */
 
 
@@ -23,28 +32,52 @@ if(isset($_POST["submit"]))
     {
 
 
-                    $sql_requet = "INSERT INTO student (nom,prenom,email,password_student,Html,Css,Javascript,Php) VALUES ('$name','$prenom','$email','$password','$html','$css','$js','$php')";
-            
+            if(!empty($name ) && !empty($prenom ) && !empty($email ) && !empty($password ) )
+            {
+
+                if(preg_match($regix_name,$name) && preg_match($regix_name,$prenom) && preg_match($regix_email,$email) && preg_match($regix_password ,$password))
+                 {
+                    if(empty($html ) && empty($css ) && empty($js ) && empty($php ))
+                    {
+                        $html = 'NULL';
+                        $css = 'NULL';
+                        $js = 'NULL';
+                        $php = 'NULL';
+                    }
+                    
+                    $sql_requet = "INSERT INTO student (nom,prenom,email,password,Html,Css,Javascript,Php) VALUES ('$name','$prenom','$email','$password','$html','$css','$js','$php')";
+                    // $sql_requet_position = "INSERT INTO position (id_user,email,password,position) VALUES (66,'$email','$password','student')";
+                    // mysqli_query($connection_DB,$sql_requet_position);
+
                     if(mysqli_query($connection_DB,$sql_requet))
                     {
-                        header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');     
+                        // header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');  
+                        $student = mysqli_query($connection_DB,"SELECT * FROM student WHERE nom = '$name' ");
+                        $row = mysqli_fetch_array($student);
+                        echo "insert work </br>" ;
+                        echo "id = " . $row["id"] ;
+
                     }   
                     else{
+                        // header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');     
                         echo "mkhdamach";
-                        // echo $name;
-                        // echo $prenom;
-                        // echo $email;
-                        // echo $password;
-                        // echo $html;
-                        // echo $css;
-                        // echo $js;
-                        // echo $php;
-
                     }
+                }
+                else{
+                    // header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');     
+                    echo " erer" ;
+                }
+
+
+            }
+            else{
+                // header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');     
+                echo "errrrooooooooooor";
+            }
+
+
 
 }
-
-
 
 
     /*     update data*/
@@ -63,11 +96,10 @@ if(isset($_POST["submit"]))
                         echo $js . "</br>";
                         echo $php . "</br>";
         
-        $sql_requet = "UPDATE student SET nom = '$name' , prenom = '$prenom' , password_student = '$password', email = '$email', Html = '$html', Css = '$css' , javascript = '$js' , Php='$php'  WHERE id =$id ";
+        $sql_requet = "UPDATE student SET nom = '$name' , prenom = '$prenom' , password = '$password', email = '$email', Html = '$html', Css = '$css' , javascript = '$js' , Php='$php'  WHERE id =$id ";
             if(mysqli_query($connection_DB,$sql_requet))
             {
                 header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php=&btn=');
-                // echo "khdama";
             }
             else{
                 echo "mkhdamach";

@@ -342,6 +342,7 @@ footer .footer_btn button:hover {
   height: 550px;
   padding: 5% 2%;
   margin-top: 20px;
+  text-align: center;
 }
 
 .login .zone_main_login form .checkout {
@@ -409,6 +410,20 @@ footer .footer_btn button:hover {
     width: 90%;
     height: 450px;
   }
+}
+
+#input {
+  width: 44%;
+  height: 42px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 0px 15px;
+  background-color: #2B2F33;
+  color: white;
+}
+
+#input:focus {
+  outline: none;
 }
 
 .profil .zone_main_profil h1, .profil .zone_main_profil .popup_see_note h2, .popup_see_note .profil .zone_main_profil h2 {
@@ -700,4 +715,12 @@ footer .footer_btn button:hover {
 
 .dropdown {
   margin: 50px 0px;
+}
+
+.conteneur-haut {
+  display: flex;
+}
+
+.image-acceuil {
+  width: 50%;
 }

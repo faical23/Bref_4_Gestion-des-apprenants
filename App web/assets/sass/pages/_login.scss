@@ -15,6 +15,7 @@
         height: 550px;
         padding: 5% 2%;
         margin-top: 20px;
+        text-align: center;
         .checkout{
             display: flex;
             align-items: center;
@@ -85,4 +86,16 @@
     }
 
 }
+}
+#input{
+    width: 44%;
+    height: 42px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 0px 15px;
+    background-color: $primary_color_2;
+    color: white;
+    &:focus{
+        outline: none;
+    }
 }

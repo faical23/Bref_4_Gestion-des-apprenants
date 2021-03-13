@@ -6,7 +6,7 @@ create table student (  /* create student tabel */
     nom VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    password_student VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     Html int default "0",
     Css int default "0",
     Javascript int default "0",
@@ -22,7 +22,7 @@ ALTER TABLE formateur  /* add attrubite to  exists table */
 ADD password_formateur VARCHAR(255) NOT NULL ;
 
 /* add a row from a table */
-INSERT INTO student (nom,prenom,email,password_student,Html,Css,Javascript,Php) VALUES("faical","bahsis","faissalabr@gmail.com","faical99",16,15,14,13)
+INSERT INTO student (nom,prenom,email,password,Html,Css,Javascript,Php) VALUES("faical","bahsis","faissalabr@gmail.com","faical99",16,15,14,13)
 
 /* add a row from a table */
 INSERT INTO formateur (id,nom,prenom,email,password_formateur) VALUES("chaimae","nmeyess","chaima@gmail.com","chaimae123")
@@ -31,7 +31,7 @@ INSERT INTO formateur (id,nom,prenom,email,password_formateur) VALUES("chaimae",
 /* update a attrubite from a eow table */
 UPDATE student
 SET email = 'faical@gmail.com', /* update */
-    password_student = 'faicalbahsisbahsis'  /* update */
+    password = 'faicalbahsisbahsis'  /* update */
 WHERE nom = "faical"; /* condition should exists */
 
 

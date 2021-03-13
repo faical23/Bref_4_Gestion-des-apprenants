@@ -1,7 +1,6 @@
 
 
 
-
 	/*  validation regix */
 
 	var inputName = document.getElementById("name")
@@ -103,8 +102,9 @@ function delete_popup(id_user){
 
 /* get data to update  */
 
-function imported(user_id,user_name , user_prenom , user_email , user_pass , user_html ,user_css,user_js , user_php){
+var imported = (user_id,user_name , user_prenom , user_email , user_pass , user_html ,user_css,user_js , user_php) =>{
 
+	console.log(user_id);
 
 	document.getElementById("id_user").value=user_id;
 	document.getElementById("name").value=user_name;
@@ -118,8 +118,14 @@ function imported(user_id,user_name , user_prenom , user_email , user_pass , use
 	document.getElementById("update_btn").style="display:block";
 	document.getElementById("valide").style="display:none";		
 
-	console.log(id);
 }
+var imported_void = () =>{
 
+document.getElementById("id_user").value="";
+document.getElementById("name").value="";
+document.getElementById("prenom").value="";
+document.getElementById("email").value="";
+document.getElementById("password").value="";
+	
 
-
+}

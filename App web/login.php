@@ -20,7 +20,13 @@
 			<form action="assets/php/login_st_pr.php" method="POST">
 				<h3 class="form_titre">Sign up</h3>
 
-										
+				<select name="input_posiiton" id="input"  onchange="choose()">
+					<option>Select option</option>
+					<option >Formateur</option>
+					<option >Student</option>
+				</select>
+
+
 					<input type="email" name="email" placeholder="Email">
 					<input type="password" name="password" placeholder="Password">
 					<div class="checkout">
@@ -45,7 +51,7 @@
 <?php include "assets/php/footer.php"?>
 
 <script src="http://code.jquery.com/jquery.min.js"></script>
-<script src="selectFilter.min.js"></script>
+<script src="assets/js/main.js"></script>
 
 </script>
 </body>
