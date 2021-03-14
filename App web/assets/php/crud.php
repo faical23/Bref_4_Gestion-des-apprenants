@@ -46,16 +46,29 @@ if(isset($_POST["submit"]))
                     }
                     
                     $sql_requet = "INSERT INTO student (nom,prenom,email,password,Html,Css,Javascript,Php) VALUES ('$name','$prenom','$email','$password','$html','$css','$js','$php')";
+
                     // $sql_requet_position = "INSERT INTO position (id_user,email,password,position) VALUES (66,'$email','$password','student')";
                     // mysqli_query($connection_DB,$sql_requet_position);
 
                     if(mysqli_query($connection_DB,$sql_requet))
                     {
-                        // header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');  
-                        $student = mysqli_query($connection_DB,"SELECT * FROM student WHERE nom = '$name' ");
-                        $row = mysqli_fetch_array($student);
+                        // $student = mysqli_query($connection_DB,"SELECT * FROM student");
+                        // $row = mysqli_fetch_array($student);
+                        
+                        $from = "wecode@gmail.com";
+                        $headers = "From : WECODE SCHOOL";
+                        $message = "YOUR PASSWORD ACCOUNT IN WECODE IS : $password";
+                        $to_email = "faissalabr@gmail.com";
+                        mail($to_email,$from,$message,$headers);
+
+                        
+
+                        $last_id = mysqli_insert_id($connection_DB);
                         echo "insert work </br>" ;
-                        echo "id = " . $row["id"] ;
+                        echo "id = " . $last_id ;
+                        $sql_requet = "INSERT INTO position (id_user,email,password,position) VALUES ('$last_id','$email','$password','student')";
+                        mysqli_query($connection_DB,$sql_requet);
+                        header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');  
 
                     }   
                     else{
