@@ -1,8 +1,12 @@
 <?php
+    session_start();
+
 
     // mysqli_fetch_array() = Retourne une ligne de résultat sous la forme d'un tableau associatif, d'un tableau indexé, ou les deux
     // mysqli_fetch_assoc() = Récupère une ligne de résultat sous forme de tableau associatif
     // mysqli_fetch_row() =  Récupère une ligne de résultat sous forme de tableau indexé
+    //  session_start() = is a way to store information (in variables) to be used across multiple pages.
+
 
     require "connection.php";
 
@@ -39,11 +43,19 @@
             $row = mysqli_fetch_array($sql_requet_posiiton);
 
             echo "id = " . $row["id"] . "</br>";
+            echo "position = " . $position_user . "</br>";
+
+            $_SESSION["id"] = $row["id"];
+            $_SESSION["position"] = $position_user;
+            echo $_SESSION["id"] ."</br>";
+            echo $_SESSION["position"] ."</br>";
+            header('Location: ../../profil_st_pr.php');     
+
+
             // echo  "nom = " . $row["nom"]."</br>";
             // echo  "prenom = " . $row["prenom"]."</br>";
             // echo  "email = " . $row["email"] . "</br>";
             // echo  "password = " . $row["password"] . "</br>";
-            echo "position = " . $position_user . "</br>";
             // echo "hmtl = " . $row["Html"] ."</br>";
 
             // for($i = 0 ; $i < 9 ; $i++)
@@ -77,7 +89,7 @@
     //         // if($user_password === $password)
     //         // {
     //         //     echo " </br> this email is exist";
-    //         //     // header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');     
+    //         //     // header('Location: ../../profil_st_pr.php');     
     
     //         // }
     //         // else{

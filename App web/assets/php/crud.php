@@ -3,6 +3,8 @@
     // isset() : Détermine si une variable est déclarée et est différente de null
     // empty() : Détermine si une variable est vide
 
+session_start(); // open session
+
 
 require "connection.php";
 
@@ -68,23 +70,23 @@ if(isset($_POST["submit"]))
                         echo "id = " . $last_id ;
                         $sql_requet = "INSERT INTO position (id_user,email,password,position) VALUES ('$last_id','$email','$password','student')";
                         mysqli_query($connection_DB,$sql_requet);
-                        header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');  
+                        header('Location: ../../profil_st_pr.php');  
 
                     }   
                     else{
-                        // header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');     
+                        // header('Location: ../../profil_st_pr.php');     
                         echo "mkhdamach";
                     }
                 }
                 else{
-                    // header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');     
+                    // header('Location: ../../profil_st_pr.php');     
                     echo " erer" ;
                 }
 
 
             }
             else{
-                // header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php&btn=');     
+                // header('Location: ../../profil_st_pr.php');     
                 echo "errrrooooooooooor";
             }
 

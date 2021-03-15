@@ -1,3 +1,22 @@
+<?php
+	session_start(); // open session
+	require "assets/php/connection.php";
+
+
+
+	if(isset($_SESSION['id'])){  // if session['id'] is not open
+
+		echo  $_SESSION["id"] ;
+		echo  $_SESSION["position"] ;
+		// header('Location:login.php');
+	}
+
+	// else{
+	// header('Location:profil_st_pr.php');
+ 	// }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,49 +28,80 @@
 </head>
 <body>
 <section class="haeder_main">
-	<?php include "assets/php/header.php"  ?>
+
+	<?php include "assets/php/header.php";
+
+		$user_id =  $_SESSION["id"] ;
+		$position_user = $_SESSION["position"] ;
+
+		$slq_requet = mysqli_query($connection_DB,"SELECT * FROM $position_user WHERE id = '$user_id' ");
+		$row = mysqli_fetch_array($slq_requet);	
+		$name_user = $row["nom"];
+		
+	?>
+
+
     <main class="profil">
         <div class="container">
             <div class="zone_main_profil">
-                <h1>Hi Faical welcome in  your profil !</h1>
+                <h1>Hi <?php echo $row["nom"]?> welcome in  your profil !</h1>
                 <div class="zone_informations">
                     <div class="info_personel">
                         <div class=" name_prenom">
-                            <p><span>Nom : </span>Faical </p>
-                            <p><span>prénom : </span>Bahsis </p>
+                            <p><span>Nom : </span><?php echo $row["nom"] ?></p>
+                            <p><span>prénom : </span><?php echo $row["prenom"] ?> </p>
                         </div>
                         <div class="email_password">
-                            <p><span>Email : </span>Faissalabr@gmail.com</p>
+                            <p><span>Email : </span><?php echo $row["email"] ?></p>
                             <p><span>Class : </span>Adalovelace </p>
                         </div>
                     </div>
                     <div class="btn_logout">
-                            <button>Logout</button>
+					<a href="login.php" onclick="<?php session_destroy();?>">
+							<button>Logout</button>
+						</a>
                     </div>
 
                 </div>
             </div>
-			<!-- <div class="zone_student">
+
+			<?Php 
+				if($position_user == "student")
+				{
+			?>
+			<div class="zone_student">
 				<h1>Your notes</h1>
 				<div class="all_note">
 								<div class="card_notes">
 										<H1>HTML</H1>
-										<H2>16/20</H2>
+										<H2><?php echo $row["Html"] . "/20" ?></H2>
 								</div>
 								<div class="card_notes">
 										<H1>CSS</H1>
-										<H2>16/20</H2>
+										<H2><?php echo $row["Css"] . "/20" ?></H2>
 								</div>
 								<div class="card_notes">
 										<H1>JS</H1>
-										<H2>16/20</H2>
+										<H2><?php echo $row["Javascript"] . "/20" ?></H2>
 								</div>
 								<div class="card_notes">
 										<H1>PHP</H1>
-										<H2>16/20</H2>
+										<H2><?php echo $row["Php"] . "/20" ?></H2>
 								</div>
 							</div>
-			</div> -->
+			</div>
+
+
+			<?php
+				}
+			?>
+
+			<?Php 
+				if($position_user == "formateur")
+				{
+			?>
+
+			
 			<div class="zone_formateur">
 				<div class="btn_add">
 					<a href="#validee" onclick="imported_void()" ><button >Add student</button></a>
@@ -182,6 +232,12 @@
 
         </div>
     </main>
+
+	
+
+	<?php
+		}
+	?>
 </section>
 
 <?php include "assets/php/footer.php"?>

@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if(isset($_SESSION['id'])){
+	header('Location:profil_st_pr.php');
+ }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +29,6 @@
 			</div>
 			<form action="assets/php/login_st_pr.php" method="POST">
 				<h3 class="form_titre">Sign up</h3>
-
-				<select name="input_posiiton" id="input"  onchange="choose()">
-					<option>Select option</option>
-					<option >Formateur</option>
-					<option >Student</option>
-				</select>
-
 
 					<input type="email" name="email" placeholder="Email">
 					<input type="password" name="password" placeholder="Password">
