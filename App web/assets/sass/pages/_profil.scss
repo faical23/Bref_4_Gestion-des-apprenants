@@ -36,7 +36,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit ,minmax(150px,1fr));
             justify-items: center;
-            margin-top: 10px;
+            margin: 30px 0px;
             .card_notes{
                 border: 1px solid #C2AE2B;
                 background-color: $primary_color_4;

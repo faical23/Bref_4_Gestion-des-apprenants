@@ -4,6 +4,8 @@
         header('Location:profil_st_pr.php');
      }
 
+	 $error = false;
+
 ?>
 
 <!DOCTYPE html>
@@ -96,15 +98,33 @@
 
 						}
 						else{
-							echo "this email is not exist";
+							$error = true;
+							// echo "<script>alert('Error: the information is not correct.')</script>";
+							// echo "Error: the information is not correct.";
 						}
                     }
                     ?>
 
 <?php include "assets/php/footer.php"?>
 
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script src="assets/js/main.js"></script>
+
+<script>
+
+	<?php
+    if ($error) {
+        ?>
+
+		swal("Error", "The information is not correct!", "error");
+
+	<?php
+    }
+	?>
+</script>
 
 </script>
 </body>

@@ -11,17 +11,19 @@
 	function validation_Name(par,regix , nmber_char){
 		var input_name = document.querySelector(`#${par}`);
 		var input_name_value = input_name.value; 
-		console.log("true");
+		var inputPrenom_value = inputPrenom.value;
 		console.log(input_name_value);
+
+		console.log(inputPrenom_value.length);
 		input_name.style="border:1px solid red ";
 
-			if(input_name_value .match(regix) && input_name_value .length >= nmber_char) { 
+			if(!(input_name_value .match(regix)) && !(input_name_value .length >= nmber_char) || inputPrenom_value.length == 0 ) { 
+				document.getElementById("valide").disabled = true; 
+			}
+			else{
 				document.getElementById("valide").disabled = false; 
 				input_name.style="border:1px solid green ";
 
-			}
-			else{
-				document.getElementById("valide").disabled = true; 
 			}
 
 	}
