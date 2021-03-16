@@ -1,5 +1,9 @@
 <?php 
 	session_start();
+	if(isset($_SESSION['id'])){
+        header('Location:profil_st_pr.php');
+     }
+
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['id'])){
+    header('Location:login.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +49,7 @@ session_start();
                         </div>
                     </div>
                     <div class="btn_logout">
-					<a href="login.php">
+					<a href="logout.php" >
 							<button>Logout</button>
 						</a>
                     </div>
@@ -109,7 +113,6 @@ session_start();
 						<th>Action</th>
 						</tr>
 						<?php
-                            // require "assets/php/connection.php";
                     $student = mysqli_query($connection_DB, "SELECT * FROM student");
 
                     if (mysqli_num_rows($student) > 0) {
