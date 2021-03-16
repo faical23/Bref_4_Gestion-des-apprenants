@@ -97,6 +97,39 @@ if(!isset($_SESSION['id'])){
                     ?>
 
 			<div class="zone_formateur">
+
+			<?php
+			
+			$slq_requet = mysqli_query($connection_DB,"SELECT * FROM student ");
+			$number_student=mysqli_num_rows($slq_requet);	
+
+			$max_note_requet = mysqli_query($connection_DB,"SELECT nom , prenom FROM student WHERE Sum_note = ( SELECT max(Sum_note) FROM student )");
+			$row = mysqli_fetch_array($max_note_requet);	
+			$best_student_name = $row["nom"];
+			$best_student_prenom = $row["prenom"];
+
+			$min_note_requet = mysqli_query($connection_DB,"SELECT nom , prenom FROM student WHERE Sum_note = ( SELECT min(Sum_note) FROM student )");
+			$row = mysqli_fetch_array($min_note_requet);	
+			$Worst_student_name = $row["nom"];
+			$Worst_student_prenom = $row["prenom"];
+
+			?>
+
+				<div class="card_formateur">
+					<div class="mini_card">
+						<h3>Number student</h3>
+						<h4><?php  echo $number_student?></h4>
+					</div>
+					<div class="mini_card">
+						<h3>Best student </h3>
+						<h4><?php echo $best_student_name . " " . $best_student_prenom ;?><H4>
+					</div>
+					<div class="mini_card">
+						<h3>Worst student</h3>
+						<h4><?php echo $Worst_student_name. " " . $Worst_student_prenom ;?><H4>
+					</div>
+				</div>
+
 				<div class="btn_add">
 					<a href="#validee" onclick="imported_void()" ><button >Add student</button></a>
 

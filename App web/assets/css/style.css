@@ -713,8 +713,24 @@ footer .footer_btn button:hover {
   }
 }
 
-.dropdown {
-  margin: 50px 0px;
+.card_formateur {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 0px;
+  color: black;
+  font-family: 'poping-Semibold';
+}
+
+.card_formateur .mini_card {
+  border: 1px solid white;
+  border-radius: 6px;
+  background-color: white;
+  width: 23%;
+  padding: 18px 0px;
+}
+
+.card_formateur .mini_card h4 {
+  color: #C2AE2B;
 }
 
 .conteneur-haut {

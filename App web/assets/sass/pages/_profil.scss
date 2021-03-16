@@ -58,46 +58,6 @@
                 @include button(-5px -5px 0px 1px white);
             }
        }
-    //    .space_name_student,.space_student{
-    //     padding: 12px;
-    //     border-radius: 9px;
-    //    }
-       
-    //    .space_name_student{
-    //     background-color: black;
-    //     color:$primary_color_1;
-    //     .titre_table{
-    //         th{
-    //             padding:0px 26px;
-    //             font-family: 'poping-Medium';
-    //             font-size: 16px;
-
-    //         }
-    //     }
-    //    }
-    //    .space_student{
-    //     background-color: $primary_color_4;
-    //     color:$primary_color_2;
-    //     margin:5px 0px;
-    //     .student_table{
-    //         td{
-    //             padding:0px 32px;
-    //             font-family: 'poping-Medium';
-    //             font-size: 16px;
-    //             .crud{
-    //                 display: flex;
-    //                 svg{
-    //                     fill: $primary_color_2;
-    //                     margin:0px 10px;
-    //                     cursor: pointer;
-    //                     &:hover{
-    //                         fill:$primary_color_1;
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    //    }
 
         .space_student{
             overflow: scroll;
@@ -311,6 +271,21 @@
     }
  }
 
-.dropdown{
-    margin:50px 0px;
-}
+
+ .card_formateur{
+     display: flex;
+     justify-content: space-evenly;
+     padding: 50px 0px;
+     color: black;
+     font-family: 'poping-Semibold';
+     .mini_card{
+        border: 1px solid white;
+        border-radius: 6px;
+        background-color: white;
+        width: 23%;
+        padding: 18px 0px;
+        h4{
+            color: $primary_color_1;
+        }
+     }
+ }

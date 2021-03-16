@@ -45,8 +45,8 @@ if(isset($_POST["submit"]))
                         $js = 'NULL';
                         $php = 'NULL';
                     }
-                    
-                    $sql_requet = "INSERT INTO student (nom,prenom,email,password,Html,Css,Javascript,Php) VALUES ('$name','$prenom','$email','$password','$html','$css','$js','$php')";
+                    $total = $html+$css+$js+$php;
+                    $sql_requet = "INSERT INTO student (nom,prenom,email,password,Html,Css,Javascript,Php,Sum_note) VALUES ('$name','$prenom','$email','$password','$html','$css','$js','$php','$total')";
 
                     // $sql_requet_position = "INSERT INTO position (id_user,email,password,position) VALUES (66,'$email','$password','student')";
                     // mysqli_query($connection_DB,$sql_requet_position);
