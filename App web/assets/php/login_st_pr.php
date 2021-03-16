@@ -1,45 +1,29 @@
 <?php
-    session_start();
-
-
-    // mysqli_fetch_array() = Retourne une ligne de résultat sous la forme d'un tableau associatif, d'un tableau indexé, ou les deux
-    // mysqli_fetch_assoc() = Récupère une ligne de résultat sous forme de tableau associatif
-    // mysqli_fetch_row() =  Récupère une ligne de résultat sous forme de tableau indexé
-    //  session_start() = is a way to store information (in variables) to be used across multiple pages.
-
 
     require "connection.php";
 
     $email = $_POST["email"];
     $password = $_POST["password"];
-    // $position = $_POST["input_posiiton"];
-    // echo $position . "</br>";
+
 
     $sql_requet = mysqli_query($connection_DB,"SELECT * FROM  position WHERE email='$email' AND password = '$password' ");
 
 
     if(mysqli_num_rows($sql_requet) ==  1)
     {
-        // echo "this email is exist in table position </br>";
 
         foreach($sql_requet as $value){
 
-            // $user_password = $value["password"];
-            // echo $user_password . " == " . $password . "</br>";
             $position_user = $value["position"];
             $id_user = $value["id_user"];
 
-            // echo $value["email"] . "</br>";
-            // echo $value["id_user"] . "</br>";
-            // echo $value["password"] . "</br>";
-            // echo $value["position"] . "</br>";
+
 
         }
         $sql_requet_posiiton = mysqli_query($connection_DB,"SELECT * FROM  $position_user WHERE id = '$id_user'");
 
         if(mysqli_num_rows($sql_requet_posiiton ) ==  1 )
         {
-            // echo "this email is exist in table  $position_user </br>";
             $row = mysqli_fetch_array($sql_requet_posiiton);
 
             echo "id = " . $row["id"] . "</br>";
@@ -47,21 +31,12 @@
 
             $_SESSION["id"] = $row["id"];
             $_SESSION["position"] = $position_user;
-            echo $_SESSION["id"] ."</br>";
-            echo $_SESSION["position"] ."</br>";
+            // echo $_SESSION["id"] ."</br>";
+            // echo $_SESSION["position"] ."</br>";
             header('Location: ../../profil_st_pr.php');     
 
 
-            // echo  "nom = " . $row["nom"]."</br>";
-            // echo  "prenom = " . $row["prenom"]."</br>";
-            // echo  "email = " . $row["email"] . "</br>";
-            // echo  "password = " . $row["password"] . "</br>";
-            // echo "hmtl = " . $row["Html"] ."</br>";
 
-            // for($i = 0 ; $i < 9 ; $i++)
-            // {
-            //     echo $row[$i] . "</br>";
-            // }
 
         }
         else{
@@ -75,32 +50,7 @@
 
 
 
-    // $position = "formateur";
 
-    // $id_user = 1;
-
-    // $sql_requet_posiiton = mysqli_query($connection_DB,"SELECT * FROM  $position_user WHERE id = '$id_user'");
-
-
-    //     if(mysqli_num_rows($sql_requet_posiiton ) ==  1 )
-    //     {
-    //         echo "this email is exist";
-
-    //         // if($user_password === $password)
-    //         // {
-    //         //     echo " </br> this email is exist";
-    //         //     // header('Location: ../../profil_st_pr.php');     
-    
-    //         // }
-    //         // else{
-    //         //     echo " </br> password incorrect";
-    //         // }
-
-            
-    //     }
-    //     else{
-    //         echo "this email is not exist";
-    //     }
 
 
 

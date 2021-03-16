@@ -1,9 +1,5 @@
 
-<?php
 
-	session_start();
-	
-?>
 <header>
         <div class="navbar">
             <div class="logo">

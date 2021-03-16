@@ -1,20 +1,5 @@
 <?php
-	session_start(); // open session
-	require "assets/php/connection.php";
-
-
-
-	if(isset($_SESSION['id'])){  // if session['id'] is not open
-
-		echo  $_SESSION["id"] ;
-		echo  $_SESSION["position"] ;
-		// header('Location:login.php');
-	}
-
-	// else{
-	// header('Location:profil_st_pr.php');
- 	// }
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -29,11 +14,14 @@
 <body>
 <section class="haeder_main">
 
-	<?php include "assets/php/header.php";
+	<?php 
+		include "assets/php/header.php";
+
 
 		$user_id =  $_SESSION["id"] ;
 		$position_user = $_SESSION["position"] ;
 
+		require "assets/php/connection.php";
 		$slq_requet = mysqli_query($connection_DB,"SELECT * FROM $position_user WHERE id = '$user_id' ");
 		$row = mysqli_fetch_array($slq_requet);	
 		$name_user = $row["nom"];
@@ -44,20 +32,20 @@
     <main class="profil">
         <div class="container">
             <div class="zone_main_profil">
-                <h1>Hi <?php echo $row["nom"]?> welcome in  your profil !</h1>
+                <h1>Hi <?php echo $name_user; ?> welcome in  your profil !</h1>
                 <div class="zone_informations">
                     <div class="info_personel">
                         <div class=" name_prenom">
-                            <p><span>Nom : </span><?php echo $row["nom"] ?></p>
-                            <p><span>prénom : </span><?php echo $row["prenom"] ?> </p>
+                            <p><span>Nom : </span><?php echo $row["nom"] ;?></p>
+                            <p><span>prénom : </span><?php echo $row["prenom"] ;?> </p>
                         </div>
                         <div class="email_password">
-                            <p><span>Email : </span><?php echo $row["email"] ?></p>
+                            <p><span>Email : </span><?php echo $row["email"] ;?></p>
                             <p><span>Class : </span>Adalovelace </p>
                         </div>
                     </div>
                     <div class="btn_logout">
-					<a href="login.php" onclick="<?php session_destroy();?>">
+					<a href="login.php">
 							<button>Logout</button>
 						</a>
                     </div>
@@ -66,42 +54,44 @@
             </div>
 
 			<?Php 
-				if($position_user == "student")
-				{
-			?>
+                if ($position_user == "student") {
+                    ?>
+
+
 			<div class="zone_student">
 				<h1>Your notes</h1>
 				<div class="all_note">
 								<div class="card_notes">
 										<H1>HTML</H1>
-										<H2><?php echo $row["Html"] . "/20" ?></H2>
+										<H2><?php echo  $row["Html"] . "/20" ?></H2>
 								</div>
 								<div class="card_notes">
 										<H1>CSS</H1>
-										<H2><?php echo $row["Css"] . "/20" ?></H2>
+										<H2><?php echo  $row["Css"] . "/20" ?></H2>
 								</div>
 								<div class="card_notes">
 										<H1>JS</H1>
-										<H2><?php echo $row["Javascript"] . "/20" ?></H2>
+										<H2><?php echo   $row["Javascript"] . "/20" ?></H2>
 								</div>
 								<div class="card_notes">
 										<H1>PHP</H1>
-										<H2><?php echo $row["Php"] . "/20" ?></H2>
+										<H2><?php echo   $row["Php"] . "/20" ?></H2>
 								</div>
 							</div>
-			</div>
+				</div>
 
+	
 
-			<?php
+				<?php
 				}
 			?>
 
-			<?Php 
-				if($position_user == "formateur")
-				{
-			?>
-
 			
+
+			<?Php 
+                if ($position_user == "formateur") {
+                    ?>
+
 			<div class="zone_formateur">
 				<div class="btn_add">
 					<a href="#validee" onclick="imported_void()" ><button >Add student</button></a>
@@ -118,19 +108,17 @@
 						<th>Php</th>
 						<th>Action</th>
 						</tr>
-						<?php 
-							require "assets/php/connection.php";
-							$student = mysqli_query($connection_DB,"SELECT * FROM student");
+						<?php
+                            // require "assets/php/connection.php";
+                    $student = mysqli_query($connection_DB, "SELECT * FROM student");
 
-							if(mysqli_num_rows($student) > 0)
-							{
-						?>
+                    if (mysqli_num_rows($student) > 0) {
+                        ?>
 
 
 							<?php
-										foreach($student as $value)
-										{
-							?>
+                                        foreach ($student as $value) {
+                                            ?>
 										<tr>
 											<td class="id"><?php echo $value["id"]; ?>									
 											</td>
@@ -151,7 +139,7 @@
 													<a onclick="imported('<?php echo $value['id']?>','<?php echo $value['nom']?>','<?php echo $value['prenom']?>','<?php echo $value['email']?>','<?php echo $value['password']?>','<?php echo $value['Html']?>','<?php echo $value['Css']?>','<?php echo $value['Javascript']?>','<?php echo $value['Php']?>')" class="update_icon" type="submit" name="update" href='#validee'>
 														<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
 													</a>
-													<a class="delete_icon" onclick="delete_popup(<?php echo $value['id'] ;?>)">
+													<a class="delete_icon" onclick="delete_popup(<?php echo $value['id'] ; ?>)">
 														<svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7z"/></svg>
 													</a>
 												</div>
@@ -159,11 +147,8 @@
 										</tr>
 
 							<?php
-									}
-							}
-								
-							
-							?>
+                                        }
+                    } ?>
 				</table>
 					</div>					
 				</div>
@@ -184,12 +169,7 @@
 							<input id="email" type="Email" name="email" id="email" placeholder="Email"   >
 							<input id="password" type="text" id="password" name="password" placeholder="Password"   >
 						</div>
-						<?php
-			$id_select = $_POST["id_select"];
-			echo $id
 
-
-	?>
 						<h1>Student notes </h1>
 						<div class="zone_input_note">
 							<div class="place_not">
@@ -213,8 +193,8 @@
 						<?php
 
 
-							
-						?>
+                            
+                        ?>
 
 
 							<div class="btn_valide"  >
@@ -233,11 +213,11 @@
         </div>
     </main>
 
-	
-
 	<?php
-		}
+            }
 	?>
+
+
 </section>
 
 <?php include "assets/php/footer.php"?>

@@ -3,7 +3,6 @@
     // isset() : Détermine si une variable est déclarée et est différente de null
     // empty() : Détermine si une variable est vide
 
-session_start(); // open session
 
 
 require "connection.php";
