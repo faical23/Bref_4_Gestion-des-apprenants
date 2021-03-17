@@ -714,29 +714,23 @@ footer .footer_btn button:hover {
 }
 
 .card_formateur {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   padding: 50px 0px;
   color: black;
   font-family: 'poping-Semibold';
+  justify-items: center;
 }
 
 .card_formateur .mini_card {
   border: 1px solid white;
   border-radius: 6px;
   background-color: white;
-  width: 23%;
+  width: 70%;
   padding: 18px 0px;
+  margin-bottom: 15px;
 }
 
 .card_formateur .mini_card h4 {
   color: #C2AE2B;
-}
-
-.conteneur-haut {
-  display: flex;
-}
-
-.image-acceuil {
-  width: 50%;
 }

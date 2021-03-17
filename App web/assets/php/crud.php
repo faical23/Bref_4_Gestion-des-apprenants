@@ -38,13 +38,13 @@ if(isset($_POST["submit"]))
 
                 if(preg_match($regix_name,$name) && preg_match($regix_name,$prenom) && preg_match($regix_email,$email) && preg_match($regix_password ,$password))
                  {
-                    if(empty($html ) && empty($css ) && empty($js ) && empty($php ))
-                    {
-                        $html = 'NULL';
-                        $css = 'NULL';
-                        $js = 'NULL';
-                        $php = 'NULL';
-                    }
+                    // if(empty($html ) && empty($css ) && empty($js ) && empty($php ))
+                    // {
+                    //     $html = "";
+                    //     $css = "";
+                    //     $js = "";
+                    //     $php = "";
+                    // }
                     $total = $html+$css+$js+$php;
                     $sql_requet = "INSERT INTO student (nom,prenom,email,password,Html,Css,Javascript,Php,Sum_note) VALUES ('$name','$prenom','$email','$password','$html','$css','$js','$php','$total')";
 

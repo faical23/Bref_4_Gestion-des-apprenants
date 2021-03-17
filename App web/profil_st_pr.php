@@ -107,7 +107,7 @@ if(!isset($_SESSION['id'])){
 			$row = mysqli_fetch_array($max_note_requet);	
 			$best_student_name = $row["nom"];
 			$best_student_prenom = $row["prenom"];
-
+ 
 			$min_note_requet = mysqli_query($connection_DB,"SELECT nom , prenom FROM student WHERE Sum_note = ( SELECT min(Sum_note) FROM student )");
 			$row = mysqli_fetch_array($min_note_requet);	
 			$Worst_student_name = $row["nom"];
@@ -210,19 +210,19 @@ if(!isset($_SESSION['id'])){
 						<div class="zone_input_note">
 							<div class="place_not">
 								<label >Html</label>
-								<input id="html" type="text" name="html" placeholder="0"   >
+								<input id="html" type="text" name="html" placeholder="0" pattern="/^[1-9]$|^0[1-9]$|^1[0-9]$|^21$/"   >
 							</div>
 							<div class="place_not">
-							<input  id="css" type="text" name="Css" placeholder="0"   >
+							<input  id="css" type="text" name="Css" placeholder="0"  pattern="/^[1-9]$|^0[1-9]$|^1[0-9]$|^21$/"  >
 								<label >Css</label>
 							</div>
 							<div class="place_not">
 								<label >Js</label>
-								<input id="js" type="text" name="Js" placeholder="0"  >	
+								<input id="js" type="text" name="Js" placeholder="0"  pattern="/^[1-9]$|^0[1-9]$|^1[0-9]$|^21$/" >	
 
 							</div>
 							<div class="place_not">
-							<input id="php" type="text" name="Php" placeholder="0"   >
+							<input id="php" type="text" name="Php" placeholder="0"  pattern="/^[1-9]$|^0[1-9]$|^1[0-9]$|^21$/"  >
 								<label >Php</label>
 							</div>
 						</div>	

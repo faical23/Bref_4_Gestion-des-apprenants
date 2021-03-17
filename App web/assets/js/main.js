@@ -12,17 +12,25 @@
 		var input_name = document.querySelector(`#${par}`);
 		var input_name_value = input_name.value; 
 		var inputPrenom_value = inputPrenom.value;
-		console.log(input_name_value);
+		var inputEmail_value = inputEmail.value;
+		var inputPassword_value = inputPassword.value;
 
-		console.log(inputPrenom_value.length);
-		input_name.style="border:1px solid red ";
+		// console.log(input_name_value);
 
-			if(!(input_name_value .match(regix)) && !(input_name_value .length >= nmber_char) || inputPrenom_value.length == 0 ) { 
-				document.getElementById("valide").disabled = true; 
+		// console.log(inputPrenom_value.length);
+
+			input_name.style="border:1px solid red ";
+		
+
+			if(input_name_value .match(regix) && input_name_value .length >= nmber_char ) { 
+				input_name.style="border:1px solid green ";
+				if(inputPrenom_value.length >= 4 && inputPassword_value .length >= 5 && inputEmail_value .length >= 5)
+				{
+					document.getElementById("valide").disabled = false; 
+				}
 			}
 			else{
-				document.getElementById("valide").disabled = false; 
-				input_name.style="border:1px solid green ";
+				document.getElementById("valide").disabled = true; 
 
 			}
 

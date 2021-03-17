@@ -19,7 +19,10 @@
   }
   
   .image-acceuil{
-    width: 280%;
+    width: 300%;
+  }
+  .image-acceuil img{
+    width: 100%;
   }
   .titre-description{
     font-family: 'poping-Semibold';
@@ -27,7 +30,7 @@
     line-height: 43px;
     color: #C2AE2B;
     text-align: left;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
   
   }
   .p-description{
@@ -53,17 +56,17 @@
   }
   .images{
     display: flex;
-    justify-content: space-between;
-  }
+    justify-content: center;
+    }
   
-  @media screen and (max-width: 1600px) {
+  /* @media screen and (max-width: 1600px) {
     .titre-description{
       font-size: 29px;
       line-height: 43px;
       text-align: left;
       padding-bottom: 30px;
     
-    }
+    } */
     .p-description{
       line-height: 24px;
       font-size: 17px;
@@ -72,26 +75,36 @@
     }
     .images{
       flex-wrap: wrap;
-      margin-left: 18%;
+      /* margin-left: 18%; */
       justify-content: space-between;
   
-      
     }
+    @media screen and (max-width: 768px) {
+      .images{
+        justify-content: center;
+      }
+    }
+
     img{
   
       margin-bottom: 29px;
     }
     
-  }
-   
-  @media screen and (max-width: 1600px) {
-    .conteneur-haut{
-      display: block;
-    
+    .description-acceuil{
+      padding-left: 30px;
     }
-  
-  
-  }
+    .description-acceuil .btn-acceuil{
+      text-align: -webkit-right;
+    }
+    .description-acceuil .btn-acceuil button{
+      background-color: white;
+    }
+    .description-acceuil .btn-acceuil button:hover{
+     box-shadow : -5px -5px 0px 1px #C2AE2B;
+    }
+
+
+
   @media screen and (max-width: 770px) {
     .titre-description{
       
@@ -122,3 +135,30 @@
        }
     }
   
+
+       
+  @media screen and (max-width: 1024px) {
+    .description-acceuil .btn-acceuil{
+      text-align: -webkit-auto;
+      }
+  } 
+  @media screen and (max-width: 1024px) {
+    .conteneur-haut {
+      display: block;
+  }
+    .image-acceuil {
+      width:  85%;
+      margin: auto;
+    }
+    .description-acceuil {
+       padding-left: 0px;
+  }
+  .description-acceuil h1 , .description-acceuil p{
+    text-align: center
+  }
+  .description-acceuil .btn-acceuil{
+    margin-left:0%;
+    text-align: -webkit-center;
+  }
+
+  } 

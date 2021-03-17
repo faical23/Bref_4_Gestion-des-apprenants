@@ -273,17 +273,21 @@
 
 
  .card_formateur{
-     display: flex;
-     justify-content: space-evenly;
-     padding: 50px 0px;
-     color: black;
-     font-family: 'poping-Semibold';
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 50px 0px;
+    color: black;
+    font-family: 'poping-Semibold';
+    justify-items: center;
+
      .mini_card{
         border: 1px solid white;
         border-radius: 6px;
         background-color: white;
-        width: 23%;
+        width: 70%;
         padding: 18px 0px;
+        margin-bottom: 15px;
         h4{
             color: $primary_color_1;
         }

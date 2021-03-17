@@ -36,8 +36,7 @@
                 Le Lorem Ipsum Est Le Faux Texte Standard De L'imprimerie 
                 Depuis Les Années 1500, Quand Un Imprimeur Anonyme 
                 Assembla Ensemble Des Morceaux De Texte Pour Réaliser Un 
-                Livre Spécimen De Polices De Texte. Il N'a Pas Fait Que Survivre 
-                Cinq Siècles, Mais S'est Aussi ?</p>
+                Livre Spécimen De Polices De Texte.</p>
                 <div class="btn-acceuil">
                     <button>LOGIN</button>
                 </div>
@@ -49,7 +48,7 @@
                 <img src="students.png" alt="">
                 <img src="studentz.png" alt="">
                 <img src="students.png" alt="">
-                <img src="studentz.png" alt="">
+                <!-- <img src="studentz.png" alt=""> -->
 
 
             </div>
