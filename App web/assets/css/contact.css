@@ -72,7 +72,7 @@
 
   .contact-form{
     background-color: #E3E2E2;
-    width: 45%;
+    width: 100%;
     margin-left: 20%;
     padding: 3%;
     border-radius: 7px;
@@ -187,7 +187,7 @@
        }
    
       .before-form{
-       width: 45%;
+       width: 100%;
       }
    
       .titre-contact{
@@ -259,11 +259,11 @@
       
       .contenu-contact{
         margin-left: 4%;
-          width: 200%;
+          width: 100% !important;
        }
       
       .before-form{
-       width: 45%;
+       width: 100%;
       }
       
       .titre-contact{
@@ -330,6 +330,7 @@
 
     @media screen and (max-width: 560px)
     {
+      
 
 .box-contact{
   width: 100%;
@@ -337,11 +338,11 @@
 
 .contenu-contact{
   margin-left: 4%;
-    width: 200%;
+    width: 100% !important;
  }
 
 .before-form{
- width: 45%;
+ width: 100%;
 }
 
 .titre-contact{
@@ -375,11 +376,8 @@
 
 }
 .reseau-sociaux{
- display: flex;
- margin-top: 140px;
- margin-left: 30px;
+  display: none !important;
 }
-
 
 i {
 padding-top: 15px;
@@ -397,7 +395,7 @@ padding-top: 15px;
 
 .contact-form{
  background-color: #E3E2E2;
- width: 45%;
+ width: 100%;
  margin: 0;
  padding: 3%;
  border-radius: 7px;

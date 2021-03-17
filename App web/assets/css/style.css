@@ -234,7 +234,7 @@ header .navbar img {
   width: 20%;
 }
 
-header .navbar a, header .navbar h1, header .navbar .popup_see_note h2, .popup_see_note header .navbar h2 {
+header .navbar h1, header .navbar .popup_see_note h2, .popup_see_note header .navbar h2 {
   padding-left: 20px;
 }
 
@@ -244,6 +244,14 @@ header .navbar .menu {
 
 header .navbar .FAQ {
   padding-top: 100px;
+}
+
+header .navbar h2 {
+  font-family: 'poping-Regular';
+  font-size: 18px;
+  color: #C2AE2B;
+  font-weight: 300;
+  padding-left: 20px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -283,11 +291,14 @@ header .navbar .FAQ {
   header .navbar .menu_FAQ svg {
     width: 100%;
   }
-  header .navbar a {
+  header .navbar h2 {
     display: none;
   }
   header .navbar .FAQ {
     padding-top: 0px;
+  }
+  header .navbar .FAQ a {
+    padding-left: 0px;
   }
 }
 
@@ -459,10 +470,13 @@ footer .footer_btn button:hover {
 
 .profil .zone_student h1, .profil .zone_student .popup_see_note h2, .popup_see_note .profil .zone_student h2 {
   color: #C2AE2B;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
 }
 
 .profil .zone_student h2 {
   font-family: 'poping-Semibold';
+  font-size: 1.3rem !important;
 }
 
 .profil .zone_student .all_note {
@@ -481,6 +495,16 @@ footer .footer_btn button:hover {
   height: 120px;
   padding-top: 9px;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 560px) {
+  .profil .zone_student .all_note .card_notes h2 {
+    font-size: 1rem !important;
+    padding-top: 18px;
+  }
+  .profil .zone_student .all_note .card_notes h1, .profil .zone_student .all_note .card_notes .popup_see_note h2, .popup_see_note .profil .zone_student .all_note .card_notes h2 {
+    font-size: 1.2rem !important;
+  }
 }
 
 .profil .zone_formateur {
@@ -610,7 +634,7 @@ footer .footer_btn button:hover {
 
 .place_validation .zone_input_note {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   justify-items: right;
 }
 
@@ -715,7 +739,7 @@ footer .footer_btn button:hover {
 @media screen and (max-width: 560px) {
   .popup_see_note {
     width: 75%;
-    transform: translate(8%, -200%);
+    transform: translate(8%, -290%);
   }
 }
 
@@ -763,4 +787,24 @@ footer .footer_btn button:hover {
   .profil .zone_formateur table td {
     padding: 10px 0px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #C2AE2B;
 }

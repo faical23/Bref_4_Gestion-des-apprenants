@@ -24,13 +24,18 @@
             }
            }
        }
+
+
    } 
    .zone_student{
         h1{
             color: $primary_color_1;
+            font-size: 1.2rem;
+            padding-bottom: 10px;
         }
         h2{
             font-family: 'poping-Semibold';
+            font-size: 1.3rem !important;
         }
         .all_note{
             display: grid;
@@ -48,6 +53,15 @@
                 margin-bottom: 10px;
             }
         }
+        @media screen and (max-width: 560px){
+            .all_note .card_notes h2 {
+                font-size: 1rem !important;
+                padding-top: 18px;
+            }
+            .all_note .card_notes h1 {
+                font-size: 1.2rem !important;
+            }
+        }
    }
    
    .zone_formateur{
@@ -62,7 +76,6 @@
         .space_student{
             overflow: scroll;
             height: 400px;
-            
         }
         table{
             border: none;
@@ -176,7 +189,7 @@
     }
     .zone_input_note{
         display: grid;
-        grid-template-columns: repeat(auto-fit ,minmax(230px,1fr));
+        grid-template-columns: repeat(auto-fit ,minmax(260px,1fr));
         justify-items: right;
         .place_not{
             display: flex;
@@ -272,7 +285,7 @@
     }
     @media screen and (max-width: 560px){
         width: 75%;
-        transform: translate(8%, -200%);
+        transform: translate(8%, -290%);
 
     }
  }
@@ -323,3 +336,23 @@
     }
 
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $primary_color_1; 
+  }
