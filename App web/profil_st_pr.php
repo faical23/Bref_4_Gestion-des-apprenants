@@ -1,8 +1,33 @@
 <?php
 session_start();
+
+
 if(!isset($_SESSION['id'])){
     header('Location:login.php');
 }
+
+	
+// 	exit;
+
+
+
+// $time = time();
+
+// if ((time() - intval($_SESSION['login_succesfly'])) > 1800) {
+//     // unset($_SESSION['login_succesfly']);
+// 	echo "its work </br>";
+// 	echo $time . "</br>";
+// 	echo time() - intval($_SESSION['login_succesfly']);
+// }
+
+	// if ($_SESSION['timeout'] < time()) {
+	// 	unset($_SESSION['login_succesfly']);
+	// 	header("Refresh: 1;url='profil_st_pr.php'");
+	//  } 
+
+
+//  $_SESSION['timeout'] = time();
+
 
 ?>
 
@@ -16,6 +41,43 @@ if(!isset($_SESSION['id'])){
     <title>PROFIL</title>
 </head>
 <body>
+
+<?php
+
+    if (isset($_SESSION['login_succesfly'])) {
+        ?>
+	<div class="login_succesfly">
+		<p> Login succesfly</p>
+	</div>
+
+<?php
+  unset($_SESSION['login_succesfly']);
+  header("Refresh:1");
+    }
+
+if (isset($_SESSION['add_succesfly'])) {
+	?>
+<div class="login_succesfly">
+	<p> Add succesfly</p>
+</div>
+
+<?php
+unset($_SESSION['add_succesfly']);
+header("Refresh:1");
+}
+
+if (isset($_SESSION['update_succesfly'])) {
+	?>
+<div class="login_succesfly">
+	<p> Update succesfly</p>
+</div>
+
+<?php
+unset($_SESSION['update_succesfly']);
+header("Refresh:1");
+}
+?>
+
 <section class="haeder_main">
 
 	<?php 
@@ -262,7 +324,6 @@ if(!isset($_SESSION['id'])){
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
-
 
 </script>
 

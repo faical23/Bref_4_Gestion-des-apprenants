@@ -3,7 +3,7 @@
     // isset() : Détermine si une variable est déclarée et est différente de null
     // empty() : Détermine si une variable est vide
 
-
+    session_start();
 
 require "connection.php";
 
@@ -61,8 +61,9 @@ if(isset($_POST["submit"]))
                         $message = "YOUR PASSWORD ACCOUNT IN WECODE IS : $password";
                         $to_email = "faissalabr@gmail.com";
                         mail($to_email,$from,$message,$headers);
+                        $_SESSION['add_succesfly'] = "add_succesfly";
 
-                        
+
 
                         $last_id = mysqli_insert_id($connection_DB);
                         echo "insert work </br>" ;
@@ -113,6 +114,7 @@ if(isset($_POST["submit"]))
         $sql_requet = "UPDATE student SET nom = '$name' , prenom = '$prenom' , password = '$password', email = '$email', Html = '$html', Css = '$css' , javascript = '$js' , Php='$php'  WHERE id =$id ";
             if(mysqli_query($connection_DB,$sql_requet))
             {
+                $_SESSION['update_succesfly'] = "update_succesfly";
                 header('Location: ../../profil_st_pr.php?id=&name=&prenom=&email=&password=&html=&css=&js=&php=&btn=');
             }
             else{

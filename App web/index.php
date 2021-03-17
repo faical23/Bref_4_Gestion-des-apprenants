@@ -37,9 +37,35 @@
                 Depuis Les Années 1500, Quand Un Imprimeur Anonyme 
                 Assembla Ensemble Des Morceaux De Texte Pour Réaliser Un 
                 Livre Spécimen De Polices De Texte.</p>
-                <div class="btn-acceuil">
-                    <button>LOGIN</button>
-                </div>
+
+    				<?php				
+                        if (isset($_SESSION['id'])) {
+                     ?>
+
+                        <div class="btn-acceuil">
+                            <a href="logout.php">
+                                <button>Logout</button>
+                            </a>
+                        </div>
+
+                    <?php
+                        }			
+                        else{
+                     ?>
+
+
+                  <div class="btn-acceuil">
+                        <a href="login.php">
+                            <button>Login</button>
+                        </a>
+                    </div>
+
+                    <?php
+                        }
+                    ?>
+
+
+
         </div>
     </div>
         <div class="gallery">

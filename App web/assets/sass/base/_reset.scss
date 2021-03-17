@@ -73,8 +73,9 @@ main{
 
 	@media screen and (max-width: 768px) 
     {
-		overflow: scroll;
-		height: 600px;
+		// overflow: scroll;
+		// height: 600px;
+		padding-bottom: 30px;
     }
 	@media screen and (max-width: 560px) 
     {

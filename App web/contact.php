@@ -24,6 +24,8 @@
 </head>
 <body>
 
+<section class="haeder_main" style="justify-content: space-evenly;">
+
 		<?php
 
 		include "assets/php/header.php";
@@ -57,20 +59,16 @@
 
                 <div class="contact-form">
                 	<form name="contact-form" action="" method="">
-				<h1 class="form-titre">Contact us</h1>
-				    <input type="text" name="username" placeholder="name">
-					<input type="email" name="email" placeholder="Email">
-					<input type="text" name="sujet" placeholder="subject">
-					<textarea name="msg" id="" cols="30" rows="10"  placeholder="message"></textarea>
-					<button class="btn-form" onclick="return verif()">Send</button>
-					
-					
-					
-				</form>
-				
-					
-				
-			</div>
+
+						<h1 class="form-titre">Contact us</h1>
+						<input type="text" name="username" placeholder="name">
+						<input type="email" name="email" placeholder="Email">
+						<input type="text" name="sujet" placeholder="subject">
+						<textarea name="msg" id="" cols="30" rows="10"  placeholder="message"></textarea>
+						<button class="btn-form" onclick="return verif()">Send</button>
+						
+					</form>
+				</div>
         
             
             

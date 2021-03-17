@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	
 	if(isset($_SESSION['id'])){
         header('Location:profil_st_pr.php');
      }
@@ -84,8 +85,13 @@
 
 								$_SESSION["id"] = $row["id"];
 								$_SESSION["position"] = $position_user;
-								echo $_SESSION["id"] ."</br>";
-								echo $_SESSION["position"] ."</br>";
+								// $cookie_name = "user";
+								// setcookie("user",$_SESSION['login_succesfly'],time() + 4,null ,null , false , true); 
+
+
+								// echo $_SESSION["id"] ."</br>";
+								// echo $_SESSION["position"] ."</br>";
+								$_SESSION['login_succesfly'] = "login_succesfly";
 
 								header('location:./profil_st_pr.php');
 
@@ -99,8 +105,7 @@
 						}
 						else{
 							$error = true;
-							// echo "<script>alert('Error: the information is not correct.')</script>";
-							// echo "Error: the information is not correct.";
+
 						}
                     }
                     ?>
