@@ -16,12 +16,7 @@
 @import "layout/footer";
 
 // 5 - Pages;
+@import "pages/index";
 @import "pages/login";
 @import "pages/profil";
-
-// .conteneur-haut{
-//     display: flex;
-// }
-// .image-acceuil {
-//     width: 50%;
-// }
+@import "pages/contact";
