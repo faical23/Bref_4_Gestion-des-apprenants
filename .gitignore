@@ -1,1 +1,2 @@
-App web/assets/css/style.css
+*.css
+/node_modules

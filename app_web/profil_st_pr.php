@@ -7,26 +7,7 @@ if(!isset($_SESSION['id'])){
 }
 
 	
-// 	exit;
 
-
-
-// $time = time();
-
-// if ((time() - intval($_SESSION['login_succesfly'])) > 1800) {
-//     // unset($_SESSION['login_succesfly']);
-// 	echo "its work </br>";
-// 	echo $time . "</br>";
-// 	echo time() - intval($_SESSION['login_succesfly']);
-// }
-
-	// if ($_SESSION['timeout'] < time()) {
-	// 	unset($_SESSION['login_succesfly']);
-	// 	header("Refresh: 1;url='profil_st_pr.php'");
-	//  } 
-
-
-//  $_SESSION['timeout'] = time();
 
 
 ?>

@@ -85,12 +85,7 @@
 
 								$_SESSION["id"] = $row["id"];
 								$_SESSION["position"] = $position_user;
-								// $cookie_name = "user";
-								// setcookie("user",$_SESSION['login_succesfly'],time() + 4,null ,null , false , true); 
 
-
-								// echo $_SESSION["id"] ."</br>";
-								// echo $_SESSION["position"] ."</br>";
 								$_SESSION['login_succesfly'] = "login_succesfly";
 
 								header('location:./profil_st_pr.php');

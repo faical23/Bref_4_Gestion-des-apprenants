@@ -58,17 +58,19 @@
                 </div>
 
                 <div class="contact-form">
-                	<form name="contact-form" action="" method="">
+                	<form name="contact-form" action="assets/php/contact_sent.php" method="POST">
 
 						<h1 class="form-titre">Contact us</h1>
 						<input type="text" name="username" placeholder="name">
 						<input type="email" name="email" placeholder="Email">
 						<input type="text" name="sujet" placeholder="subject">
 						<textarea name="msg" id="" cols="30" rows="10"  placeholder="message"></textarea>
-						<button class="btn-form" onclick="return verif()">Send</button>
+						<button type="submit" name="submit" class="btn-form" onclick="return verif()">Send</button>
 						
 					</form>
 				</div>
+
+
         
             
             
@@ -86,6 +88,35 @@
             <button>Support</button>
         </div>
     </footer>
+
+	<script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+
+	<?php
+	
+	if(isset( $_SESSION["mesage_sent"] ))
+	{
+	?>
+		<script>					
+		swal("Message has been sent");
+		</script>
+		
+
+	<?php
+	  unset($_SESSION['mesage_sent']);
+
+	}
+	elseif(isset( $_SESSION["mesage_not_sent"] )){
+        ?>
+			<script>					
+				swal("Field Empty");
+			</script>
+	<?php
+		  unset($_SESSION["mesage_not_sent"]);
+
+    }
+	?>
+
+ 
     
 </body>
 </html>
