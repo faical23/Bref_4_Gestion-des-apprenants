@@ -1,2 +1,2 @@
 *.css
-/node_modules
+./app_web/node_modules/
