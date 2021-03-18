@@ -145,16 +145,16 @@ header("Refresh:1");
 			
 			$slq_requet = mysqli_query($connection_DB,"SELECT * FROM student ");
 			$number_student=mysqli_num_rows($slq_requet);	
-
+			
 			$max_note_requet = mysqli_query($connection_DB,"SELECT nom , prenom FROM student WHERE Sum_note = ( SELECT max(Sum_note) FROM student )");
 			$row = mysqli_fetch_array($max_note_requet);	
 			$best_student_name = $row["nom"];
 			$best_student_prenom = $row["prenom"];
- 
-			$min_note_requet = mysqli_query($connection_DB,"SELECT nom , prenom FROM student WHERE Sum_note = ( SELECT min(Sum_note) FROM student )");
-			$row = mysqli_fetch_array($min_note_requet);	
-			$Worst_student_name = $row["nom"];
-			$Worst_student_prenom = $row["prenom"];
+
+			$avg_note_requet = mysqli_query($connection_DB,"SELECT ROUND(AVG(Sum_note)/4) FROM student");
+			$row = mysqli_fetch_array($avg_note_requet);	
+			$avg_note_class = $row["ROUND(AVG(Sum_note)/4)"];
+
 
 			?>
 
@@ -168,8 +168,8 @@ header("Refresh:1");
 						<h4><?php echo $best_student_name . " " . $best_student_prenom ;?><H4>
 					</div>
 					<div class="mini_card">
-						<h3>Worst student</h3>
-						<h4><?php echo $Worst_student_name. " " . $Worst_student_prenom ;?><H4>
+						<h3>moyenne class</h3>
+						<h4><?php echo $avg_note_class ;?><H4>
 					</div>
 				</div>
 
