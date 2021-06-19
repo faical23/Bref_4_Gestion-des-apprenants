@@ -74,7 +74,6 @@
                 <img src="students.png" alt="">
                 <img src="studentz.png" alt="">
                 <img src="students.png" alt="">
-                <!-- <img src="studentz.png" alt=""> -->
 
 
             </div>

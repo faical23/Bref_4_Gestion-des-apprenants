@@ -90,8 +90,6 @@
 
 								header('location:./profil_st_pr.php');
 
-
-
 							}
 							else{
 								echo "erroooooooooooooor";

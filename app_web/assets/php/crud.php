@@ -38,32 +38,14 @@ if(isset($_POST["submit"]))
 
                 if(preg_match($regix_name,$name) && preg_match($regix_name,$prenom) && preg_match($regix_email,$email) && preg_match($regix_password ,$password))
                  {
-                    // if(empty($html ) && empty($css ) && empty($js ) && empty($php ))
-                    // {
-                    //     $html = "";
-                    //     $css = "";
-                    //     $js = "";
-                    //     $php = "";
-                    // }
+
                     $total = $html+$css+$js+$php;
                     $sql_requet = "INSERT INTO student (nom,prenom,email,password,Html,Css,Javascript,Php,Sum_note) VALUES ('$name','$prenom','$email','$password','$html','$css','$js','$php','$total')";
 
-                    // $sql_requet_position = "INSERT INTO position (id_user,email,password,position) VALUES (66,'$email','$password','student')";
-                    // mysqli_query($connection_DB,$sql_requet_position);
-
                     if(mysqli_query($connection_DB,$sql_requet))
                     {
-                        // $student = mysqli_query($connection_DB,"SELECT * FROM student");
-                        // $row = mysqli_fetch_array($student);
-                        
-                        $from = "wecode@gmail.com";
-                        $headers = "From : WECODE SCHOOL";
-                        $message = "YOUR PASSWORD ACCOUNT IN WECODE IS : $password";
-                        $to_email = "faissalabr@gmail.com";
-                        mail($to_email,$from,$message,$headers);
+
                         $_SESSION['add_succesfly'] = "add_succesfly";
-
-
 
                         $last_id = mysqli_insert_id($connection_DB);
                         echo "insert work </br>" ;
@@ -74,19 +56,16 @@ if(isset($_POST["submit"]))
 
                     }   
                     else{
-                        // header('Location: ../../profil_st_pr.php');     
-                        echo "mkhdamach";
+                        echo "error";
                     }
                 }
                 else{
-                    // header('Location: ../../profil_st_pr.php');     
                     echo " erer" ;
                 }
 
 
             }
             else{
-                // header('Location: ../../profil_st_pr.php');     
                 echo "errrrooooooooooor";
             }
 
